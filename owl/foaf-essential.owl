@@ -75,6 +75,14 @@
     
 
 
+    <!-- http://xmlns.com/foaf/0.1/aimChatID -->
+
+    <owl:ObjectProperty rdf:about="&foaf;aimChatID">
+        <owl:subObjectPropertyOf rdf:resource="&foaf;nick"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://xmlns.com/foaf/0.1/currentProject -->
 
     <owl:ObjectProperty rdf:about="&foaf;currentProject">
@@ -146,11 +154,12 @@
 
     <!-- http://xmlns.com/foaf/0.1/icqChatID -->
 
-    <owl:ObjectProperty rdf:about="&foaf;icqChatID">
+    <owl:Class rdf:about="&foaf;icqChatID">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <owl:objectPropertyDomain rdf:resource="&foaf;Agent"/>
+        <rdf:type rdf:resource="&owl;ObjectProperty"/>
+        <owl:objectPropertyDomain rdf:resource="&foaf;icqChatID"/>
         <owl:subObjectPropertyOf rdf:resource="&foaf;nick"/>
-    </owl:ObjectProperty>
+    </owl:Class>
     
 
 
@@ -265,8 +274,9 @@
     <!-- http://xmlns.com/foaf/0.1/mbox_sha1sum -->
 
     <owl:ObjectProperty rdf:about="&foaf;mbox_sha1sum">
+        <rdf:type rdf:resource="&owl;Class"/>
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <owl:objectPropertyDomain rdf:resource="&foaf;Agent"/>
+        <owl:objectPropertyDomain rdf:resource="&foaf;mbox_sha1sum"/>
     </owl:ObjectProperty>
     
 
@@ -282,11 +292,12 @@
 
     <!-- http://xmlns.com/foaf/0.1/msnChatID -->
 
-    <owl:ObjectProperty rdf:about="&foaf;msnChatID">
+    <owl:Class rdf:about="&foaf;msnChatID">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
-        <owl:objectPropertyDomain rdf:resource="&foaf;Agent"/>
+        <rdf:type rdf:resource="&owl;ObjectProperty"/>
+        <owl:objectPropertyDomain rdf:resource="&foaf;msnChatID"/>
         <owl:subObjectPropertyOf rdf:resource="&foaf;nick"/>
-    </owl:ObjectProperty>
+    </owl:Class>
     
 
 
@@ -453,8 +464,7 @@
     <!-- http://xmlns.com/foaf/0.1/aimChatID -->
 
     <owl:DatatypeProperty rdf:about="&foaf;aimChatID">
-        <rdfs:domain rdf:resource="&foaf;Agent"/>
-        <rdfs:subPropertyOf rdf:resource="&foaf;nick"/>
+        <owl:dataPropertyDomain rdf:resource="&foaf;Agent"/>
     </owl:DatatypeProperty>
     
 
@@ -753,6 +763,24 @@
             >http://xmlns.com/foaf/0.1/</rdfs:isDefinedBy>
         <sw-vocab-status:nsterm_status rdf:datatype="&xsd;string">unstable</sw-vocab-status:nsterm_status>
     </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/icqChatID -->
+
+    <owl:Class rdf:about="&foaf;icqChatID"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/mbox_sha1sum -->
+
+    <owl:Class rdf:about="&foaf;mbox_sha1sum"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/msnChatID -->
+
+    <owl:Class rdf:about="&foaf;msnChatID"/>
     
 
 

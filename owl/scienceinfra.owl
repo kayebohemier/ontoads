@@ -70,6 +70,12 @@
     
 
 
+    <!-- http://xmlns.com/foaf/0.1/primaryTopic -->
+
+    <owl:ObjectProperty rdf:about="&foaf;primaryTopic"/>
+    
+
+
     <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#atObservatory -->
 
     <owl:ObjectProperty rdf:about="&ADS-Base;atObservatory"/>
@@ -142,7 +148,9 @@
 
     <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#belongsTo -->
 
-    <owl:ObjectProperty rdf:about="#belongsTo"/>
+    <owl:ObjectProperty rdf:about="#belongsTo">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+    </owl:ObjectProperty>
     
 
 
@@ -975,46 +983,15 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
     <owl:Class rdf:about="&ADS-Base;Instrument">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#supports"/>
-                <owl:someValuesFrom rdf:resource="&ADS-Base;ScienceProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#firstLight"/>
-                <owl:someValuesFrom rdf:resource="&xsd;date"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#wavelengthEnd"/>
-                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasFOV"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;decimal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#contains"/>
-                <owl:onClass rdf:resource="#ScienceInfrastructureConfiguration"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#wavelengthStart"/>
-                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#lastLight"/>
-                <owl:someValuesFrom rdf:resource="&xsd;date"/>
+                <owl:onProperty rdf:resource="&foaf;isPrimaryTopicOf"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="#InstrumentResource"/>
+                            <rdf:Description rdf:about="#ProvenanceDocument"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1033,15 +1010,46 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&foaf;isPrimaryTopicOf"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="#InstrumentResource"/>
-                            <rdf:Description rdf:about="#ProvenanceDocument"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
+                <owl:onProperty rdf:resource="#wavelengthEnd"/>
+                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#contains"/>
+                <owl:onClass rdf:resource="#ScienceInfrastructureConfiguration"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#firstLight"/>
+                <owl:someValuesFrom rdf:resource="&xsd;date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#lastLight"/>
+                <owl:someValuesFrom rdf:resource="&xsd;date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#supports"/>
+                <owl:someValuesFrom rdf:resource="&ADS-Base;ScienceProcess"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasFOV"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#wavelengthStart"/>
+                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1078,6 +1086,12 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="&foaf;fundedBy"/>
+                <owl:someValuesFrom rdf:resource="&ADS-Base;FundingAgency"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="#contains"/>
                 <owl:onClass>
                     <owl:Class>
@@ -1088,12 +1102,6 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
                     </owl:Class>
                 </owl:onClass>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&foaf;fundedBy"/>
-                <owl:someValuesFrom rdf:resource="&ADS-Base;FundingAgency"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1229,7 +1237,7 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="#ProvenanceDocument"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ADS-Base;isAbout"/>
+                <owl:onProperty rdf:resource="&foaf;primaryTopic"/>
                 <owl:someValuesFrom rdf:resource="&ADS-Base;Instrument"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1251,7 +1259,7 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="#ProvenanceDocument"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ADS-Base;isAbout"/>
+                <owl:onProperty rdf:resource="&foaf;primaryTopic"/>
                 <owl:someValuesFrom rdf:resource="&ADS-Base;Observatory"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1275,7 +1283,7 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="#ProvenanceDocument"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ADS-Base;isAbout"/>
+                <owl:onProperty rdf:resource="&foaf;primaryTopic"/>
                 <owl:someValuesFrom rdf:resource="&ADS-Base;ScienceInfrastructure"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1401,6 +1409,13 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="#contains"/>
+                <owl:onClass rdf:resource="&ADS-Base;Instrument"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="&ADS-Base;atObservatory"/>
                 <owl:onClass rdf:resource="&ADS-Base;Observatory"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
@@ -1408,9 +1423,8 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#contains"/>
-                <owl:onClass rdf:resource="&ADS-Base;Instrument"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onProperty rdf:resource="&foaf;isPrimaryTopicOf"/>
+                <owl:someValuesFrom rdf:resource="#ProvenanceDocument"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1605,17 +1619,17 @@ DJB 2011-03-07</rdfs:comment>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ADS-Base;ComputingCenter"/>
-            <rdf:Description rdf:about="&ADS-Base;Laboratory"/>
-            <rdf:Description rdf:about="&ADS-Base;Observatory"/>
+            <rdf:Description rdf:about="&ADS-Base;AirBasedObservatory"/>
+            <rdf:Description rdf:about="&ADS-Base;GroundBasedObservatory"/>
+            <rdf:Description rdf:about="&ADS-Base;SpaceCraft"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ADS-Base;AirBasedObservatory"/>
-            <rdf:Description rdf:about="&ADS-Base;GroundBasedObservatory"/>
-            <rdf:Description rdf:about="&ADS-Base;SpaceCraft"/>
+            <rdf:Description rdf:about="&ADS-Base;ComputingCenter"/>
+            <rdf:Description rdf:about="&ADS-Base;Laboratory"/>
+            <rdf:Description rdf:about="&ADS-Base;Observatory"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
