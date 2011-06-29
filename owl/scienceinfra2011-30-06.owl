@@ -1036,13 +1036,6 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#contains"/>
-                <owl:onClass rdf:resource="#ScienceInfrastructureConfiguration"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="#firstLight"/>
                 <owl:someValuesFrom rdf:resource="&xsd;date"/>
             </owl:Restriction>
@@ -1117,7 +1110,14 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
 
     <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ScienceInfrastructure -->
 
-    <owl:Class rdf:about="&ADS-Base;ScienceInfrastructure"/>
+    <owl:Class rdf:about="&ADS-Base;ScienceInfrastructure">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#contains"/>
+                <owl:someValuesFrom rdf:resource="#ScienceInfrastructureConfiguration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
@@ -1385,6 +1385,20 @@ Measurement subClassOf isSupportedBy some Instrument
                 <owl:onDataRange rdf:resource="&xsd;decimal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment
+            >:FUSE :a :Observatory
+:FUV :a Telescope
+:LWRS :a :Aperture
+:FocalPlaneAssembly :a :ScienceInfrastructureConfiguration
+:Mirror :a :ScienceInfrastructureConfiguration
+:DiffractionGrating :a :ScienceInfrastructureConfiguration
+:Detector :a :ScienceInfrastructureConfiguration
+
+:LWRS :isContainedIn :FocalPlaneAssembly
+
+--------------
+
+I&#39;m not positive that &quot;ScienceInfrastructureConfiguration&quot; should be the name of this class. Will likely change it to something more descriptive. These things provide the components of different things in the infrastructure. Additionally, some configuration elements may contain other configuration elements (see the :FocalPlaneAssembly and :LWRS examples from the FUSE Observatory).</rdfs:comment>
     </owl:Class>
     
 
@@ -1442,6 +1456,19 @@ Measurement subClassOf isSupportedBy some Instrument
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment
+            >example:
+
+:FUSE :a :Observatory
+:FUV :a :Telescope
+:LWRS :a :Aperture
+
+:FUSE :contains :LWRS
+:LWRS :isContainedIn :FUSE
+
+-------------
+
+Generalizing ScienceInfrastructureConfiguration b/c sometimes the instrument sets are complicated. In the case of FUSE, the telescope configuration is composed of many different instruments, and the aperture is not necessarily dependent on them. Must be able to associate apertures with telescopes without needing to associate them with instruments.</rdfs:comment>
     </owl:Class>
     
 
