@@ -189,7 +189,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ADS-Base;Laboratory"/>
                     <rdf:Description rdf:about="&ADS-Base;Observatory"/>
-                    <rdf:Description rdf:about="#ScienceInfrastructureConfiguration"/>
+                    <rdf:Description rdf:about="#ScienceInfrastructureComponent"/>
                     <rdf:Description rdf:about="#Telescope"/>
                 </owl:unionOf>
             </owl:Class>
@@ -339,7 +339,7 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="&ADS-Base;Instrument"/>
-                    <rdf:Description rdf:about="#ScienceInfrastructureConfiguration"/>
+                    <rdf:Description rdf:about="#ScienceInfrastructureComponent"/>
                     <rdf:Description rdf:about="#Telescope"/>
                 </owl:unionOf>
             </owl:Class>
@@ -662,7 +662,7 @@ physangSize;instr.fov UCD? Doug 25 Feb 2011</rdfs:comment>
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:range rdf:resource="&xsd;decimal"/>
         <rdfs:domain rdf:resource="&ADS-Base;Instrument"/>
-        <rdfs:domain rdf:resource="#ScienceInfrastructureConfiguration"/>
+        <rdfs:domain rdf:resource="#ScienceInfrastructureComponent"/>
     </owl:DatatypeProperty>
     
 
@@ -1158,13 +1158,13 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
     <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#Aperture -->
 
     <owl:Class rdf:about="#Aperture">
-        <rdfs:subClassOf rdf:resource="#ScienceInfrastructureConfiguration"/>
+        <rdfs:subClassOf rdf:resource="#ScienceInfrastructureComponent"/>
         <rdfs:comment
             >Added for considerations involving FUSE, which contains different apertures that yield slightly different results. An aperture is used in conjunction with a base instrument.</rdfs:comment>
         <rdfs:comment
             >Added beneath ScienceInfrastructure because it shouldn&#39;t go under an instrument ... one instrument may have many apertures, and an aperture is NOT a type of instrument.
 
-&gt;&gt; Actually, changed to ScienceInfrastructureConfiguration b/c it&#39;s not really infrastructure itself ... just describes the infrastructure.</rdfs:comment>
+&gt;&gt; Actually, changed to ScienceInfrastructureComponent b/c it&#39;s not really infrastructure itself ... just describes the infrastructure.</rdfs:comment>
     </owl:Class>
     
 
@@ -1369,9 +1369,9 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
     
 
 
-    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#ScienceInfrastructureConfiguration -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#ScienceInfrastructureComponent -->
 
-    <owl:Class rdf:about="#ScienceInfrastructureConfiguration">
+    <owl:Class rdf:about="#ScienceInfrastructureComponent">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#belongsTo"/>
