@@ -1131,6 +1131,13 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
 
     <owl:Class rdf:about="#Aperture">
         <rdfs:subClassOf rdf:resource="#ScienceInfrastructureConfiguration"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasFOV"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment
             >Added for considerations involving FUSE, which contains different apertures that yield slightly different results. An aperture is used in conjunction with a base instrument.</rdfs:comment>
         <rdfs:comment
@@ -1203,6 +1210,14 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
     
 
 
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#Detector -->
+
+    <owl:Class rdf:about="#Detector">
+        <rdfs:subClassOf rdf:resource="#ScienceInfrastructureConfiguration"/>
+    </owl:Class>
+    
+
+
     <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#Field -->
 
     <owl:Class rdf:about="#Field">
@@ -1215,6 +1230,14 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
 
     <owl:Class rdf:about="#Footprint">
         <rdfs:subClassOf rdf:resource="#SkyThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#Grating -->
+
+    <owl:Class rdf:about="#Grating">
+        <rdfs:subClassOf rdf:resource="#ScienceInfrastructureConfiguration"/>
     </owl:Class>
     
 
@@ -1256,6 +1279,14 @@ Measurement subClassOf isSupportedBy some Instrument
 :Spectrum :isSupportedBy :Chandra</rdfs:comment>
         <rdfs:comment
             >Will map to ivoa-objectontology.owl Measurements section.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#Mirror -->
+
+    <owl:Class rdf:about="#Mirror">
+        <rdfs:subClassOf rdf:resource="#ScienceInfrastructureConfiguration"/>
     </owl:Class>
     
 
@@ -1376,13 +1407,6 @@ Measurement subClassOf isSupportedBy some Instrument
                     </owl:Class>
                 </owl:onClass>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasFOV"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;decimal"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment
