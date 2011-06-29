@@ -990,12 +990,6 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#supports"/>
-                <owl:someValuesFrom rdf:resource="&ADS-Base;ScienceProcess"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&foaf;isPrimaryTopicOf"/>
                 <owl:someValuesFrom>
                     <owl:Class>
@@ -1011,6 +1005,12 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#lastLight"/>
                 <owl:someValuesFrom rdf:resource="&xsd;date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#supports"/>
+                <owl:someValuesFrom rdf:resource="#Measurement"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1118,19 +1118,6 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
     <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ScienceInfrastructure -->
 
     <owl:Class rdf:about="&ADS-Base;ScienceInfrastructure"/>
-    
-
-
-    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ScienceProcess -->
-
-    <owl:Class rdf:about="&ADS-Base;ScienceProcess">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#isSupportedBy"/>
-                <owl:someValuesFrom rdf:resource="&ADS-Base;Instrument"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
     
 
 
@@ -1242,6 +1229,33 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
                 <owl:someValuesFrom rdf:resource="&ADS-Base;Instrument"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#Measurement -->
+
+    <owl:Class rdf:about="#Measurement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#isSupportedBy"/>
+                <owl:someValuesFrom rdf:resource="&ADS-Base;Instrument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment
+            >Instrument subClassOf supports some Measurement
+Measurement subClassOf isSupportedBy some Instrument
+
+:ACIS :a :Instrument
+:Chandra :a :Telescope
+:ACIS :isContainedIn :Chandra
+:ACIS :supports :Measurement
+:Measurement :isSupportedBy :ACIS
+:Spectrum :a :Measurement &#171; defined in ivoa-objectontology.owl &#187;
+:Spectrum :isSupportedBy :ACIS
+:Spectrum :isSupportedBy :Chandra</rdfs:comment>
+        <rdfs:comment
+            >Will map to ivoa-objectontology.owl Measurements section.</rdfs:comment>
     </owl:Class>
     
 
