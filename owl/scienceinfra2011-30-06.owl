@@ -1137,6 +1137,20 @@ Telescope must have some instrument; if it does have an instrument, the instrume
     
 
 
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ScienceProduct -->
+
+    <owl:Class rdf:about="&ADS-Base;ScienceProduct">
+        <owl:equivalentClass rdf:resource="#ScienceDocument"/>
+        <rdfs:comment
+            >Are science products all documents? In the archivist/provenance sense, yes --- even the software --- but how far into that do we want to go? The relationship has been created as food for thought.
+
+See:
+
+Buckland, M. K. (1997). What is a &#8220;document&#8221;? Journal of the American Society for Information Science, 48(9), 804-809. doi:10.1002/(SICI)1097-4571(199709)48:9&lt;804::AID-ASI5&gt;3.0.CO;2-V</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#SpaceCraft -->
 
     <owl:Class rdf:about="&ADS-Base;SpaceCraft"/>
@@ -1405,6 +1419,14 @@ Measurement subClassOf isSupportedBy some Instrument
 
     <owl:Class rdf:about="#RegionOfSky">
         <rdfs:subClassOf rdf:resource="#Footprint"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#ScienceDocument -->
+
+    <owl:Class rdf:about="#ScienceDocument">
+        <rdfs:subClassOf rdf:resource="&foaf;Document"/>
     </owl:Class>
     
 

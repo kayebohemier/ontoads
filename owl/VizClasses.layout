@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <VSNode splits="0.05263157894736842 0.19736842105263158">
+        <HSNode splits="0.0613204296728965 0.023103103738368626">
+            <CNode>
+                <Component label="Asserted class hierarchy">
+                    <Property id="pluginId" value="org.protege.editor.owl.OWLAssertedClassHierarchy"/>
+                </Component>
+            </CNode>
+            <CNode>
+                <Component label="Annotations">
+                    <Property id="pluginId" value="org.protege.editor.owl.OWLClassAnnotations"/>
+                </Component>
+            </CNode>
+        </HSNode>
+        <HSNode splits="0.12074535140245825 0.07662306965017333">
+            <CNode>
+                <Component label="OWLViz">
+                    <Property id="pluginId" value="org.coode.owlviz.OWLVizView"/>
+                </Component>
+            </CNode>
+            <VSNode splits="0.039895078264523584 0.03672799138564975">
+                <CNode>
+                    <Component label="Description">
+                        <Property id="pluginId" value="org.protege.editor.owl.OWLClassDescription"/>
+                    </Component>
+                </CNode>
+                <CNode>
+                    <Component label="Usage">
+                        <Property id="pluginId" value="org.protege.editor.owl.OWLClassUsageView"/>
+                    </Component>
+                </CNode>
+            </VSNode>
+        </HSNode>
+    </VSNode>
+</layout>
