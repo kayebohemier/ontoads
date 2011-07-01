@@ -1322,6 +1322,7 @@ Telescope must have some instrument; if it does have an instrument, the instrume
 
     <owl:Class rdf:about="#JournalArticleProduct">
         <rdfs:subClassOf rdf:resource="&ADS-Base;WrittenProduct"/>
+        <owl:disjointWith rdf:resource="#WrittenProduct"/>
     </owl:Class>
     
 
