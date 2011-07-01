@@ -1407,14 +1407,6 @@ Measurement subClassOf isSupportedBy some Instrument
     
 
 
-    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#OtherWrittenProduct -->
-
-    <owl:Class rdf:about="#OtherWrittenProduct">
-        <rdfs:subClassOf rdf:resource="&ADS-Base;WrittenProduct"/>
-    </owl:Class>
-    
-
-
     <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#Pointing -->
 
     <owl:Class rdf:about="#Pointing">
@@ -1603,6 +1595,14 @@ Generalizing ScienceInfrastructureComponent b/c sometimes the instrument sets ar
 
     <owl:Class rdf:about="#Track">
         <rdfs:subClassOf rdf:resource="#SkyThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-obsv.owl#WrittenProduct -->
+
+    <owl:Class rdf:about="#WrittenProduct">
+        <rdfs:subClassOf rdf:resource="&ADS-Base;WrittenProduct"/>
     </owl:Class>
     
 
