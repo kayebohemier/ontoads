@@ -11,16 +11,16 @@
     <!ENTITY dc   "http://purl.org/dc/elements/1.1/" >
  
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
-    <!ENTITY pav "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/pav/">
-  	<!ENTITY collections "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/">
-  	<!ENTITY agents "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/">
+    <!ENTITY pav "http://swan.mindinformatics.org/ontologies/1.2/pav/">
+  	<!ENTITY collections "http://swan.mindinformatics.org/ontologies/1.2/collections/">
+  	<!ENTITY agents "http://swan.mindinformatics.org/ontologies/1.2/agents/">
     
     <!-- Main namespace -->
-    <!ENTITY citations "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/citations/" >
+    <!ENTITY citations "http://swan.mindinformatics.org/ontologies/1.2/citations/" >
     
     <!-- Files -->
   	<!ENTITY local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/citations.owl">
-  	<!ENTITY path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/citations.owl">
+  	<!ENTITY path "http://swan.mindinformatics.org/ontologies/1.2/citations.owl">
   	<!ENTITY file "&path;">  
   	
   	<!-- Previous file -->
@@ -28,7 +28,7 @@
   	
   	<!-- Imported files -->
     <!ENTITY agents-local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/agents.owl">
-    <!ENTITY agents-path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents.owl">
+    <!ENTITY agents-path "http://swan.mindinformatics.org/ontologies/1.2/agents.owl">
   	<!ENTITY agents-file "&agents-path;">
 ]>
 
@@ -115,8 +115,7 @@
     	</rdfs:domain>
         <rdfs:range>
         	<owl:Class>
-			    <owl:unionOf rdf:parseType="Collection">
-				    <owl:Class rdf:about="&agents;PersonName"/>
+			    <owl:unionOf rdf:parseType="Collection">				    <owl:Class rdf:about="&agents;PersonName"/>
 			    	<owl:Class rdf:about="&foaf;Agent"/>
 		        </owl:unionOf>
 		    </owl:Class>
@@ -412,46 +411,34 @@
     	</rdfs:subClassOf>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty>
+			<owl:Restriction>			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;importedOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>	
 		
     	<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;importedFirstOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 		
     	<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;importedLastOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="&pav;importedFromSource"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="&pav;importedFromSource"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 		
     	<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;importedWithId"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 		
 		<!-- Human Provenance -->
@@ -473,49 +460,30 @@
     	</rdfs:subClassOf>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty>
+			<owl:Restriction>			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;createdOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 		
 		<!-- Authoring -->
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionAuthor"/>
-			  	<owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionAuthor"/>			  	<owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionAuthors"/>
-				<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionAuthors"/>				<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>	
 		
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionPublisher"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionPublisher"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 		
 		<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>	
 		
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionPublicationDate"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-	</owl:Class>  
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionPublicationDate"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
+		</rdfs:subClassOf>	</owl:Class>  
 	
 	<owl:Class rdf:about="Book" rdfs:label="(citations) Book">
     	<rdfs:subClassOf rdf:resource="Citation"/>
@@ -531,16 +499,10 @@
     	<owl:disjointWith rdf:resource="WebImage"/>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="isbn10"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="isbn10"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="isbn13"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="isbn13"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>   	
 	</owl:Class>
 	
@@ -590,40 +552,22 @@
     	<owl:disjointWith rdf:resource="WebImage"/>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>
-			  	<owl:someValuesFrom rdf:resource="Journal"/>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>			  	<owl:someValuesFrom rdf:resource="Journal"/>			</owl:Restriction>
 		</rdfs:subClassOf>     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="volume"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="volume"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="issue"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="issue"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="pagination"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="pagination"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="issn"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="issn"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="doi"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="doi"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>    	
 	</owl:Class>
 	
@@ -641,40 +585,22 @@
     	<owl:disjointWith rdf:resource="WebImage"/>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>
-			  	<owl:someValuesFrom rdf:resource="Journal"/>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>			  	<owl:someValuesFrom rdf:resource="Journal"/>			</owl:Restriction>
 		</rdfs:subClassOf>          	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="volume"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="volume"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="issue"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="issue"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="pagination"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="pagination"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="issn"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="issn"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="doi"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="doi"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 	</owl:Class>
 	
@@ -692,40 +618,22 @@
     	<owl:disjointWith rdf:resource="WebImage"/>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>
-			  	<owl:someValuesFrom rdf:resource="Journal"/>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>			  	<owl:someValuesFrom rdf:resource="Journal"/>			</owl:Restriction>
 		</rdfs:subClassOf>         	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="volume"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="volume"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="issue"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="issue"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="pagination"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="pagination"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="issn"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="issn"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="doi"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="doi"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 	</owl:Class>
 	
@@ -743,40 +651,22 @@
     	<owl:disjointWith rdf:resource="WebImage"/>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>
-			  	<owl:someValuesFrom rdf:resource="Newspaper"/>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>			  	<owl:someValuesFrom rdf:resource="Newspaper"/>			</owl:Restriction>
 		</rdfs:subClassOf>            	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="volume"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="volume"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="issue"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="issue"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="pagination"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="pagination"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="issn"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="issn"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="doi"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="doi"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 	</owl:Class>
 	
@@ -794,40 +684,22 @@
     	<owl:disjointWith rdf:resource="WebImage"/>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>
-			  	<owl:someValuesFrom rdf:resource="Newspaper"/>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>			  	<owl:someValuesFrom rdf:resource="Newspaper"/>			</owl:Restriction>
 		</rdfs:subClassOf>   	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="volume"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="volume"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="issue"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="issue"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="pagination"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="pagination"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="issn"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="issn"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="doi"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="doi"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 	</owl:Class>
 	
@@ -845,26 +717,19 @@
     	<owl:disjointWith rdf:resource="WebImage"/>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>
-			  	<owl:someValuesFrom rdf:resource="Website"/>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>			  	<owl:someValuesFrom rdf:resource="Website"/>			</owl:Restriction>
 		</rdfs:subClassOf> 
     	<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;sourceAccessedOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;sourceLastAccessedOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 	</owl:Class>
 	
@@ -882,26 +747,19 @@
     	<owl:disjointWith rdf:resource="WebImage"/>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>
-			  	<owl:someValuesFrom rdf:resource="Website"/>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>			  	<owl:someValuesFrom rdf:resource="Website"/>			</owl:Restriction>
 		</rdfs:subClassOf> 
     	<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;sourceAccessedOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;sourceLastAccessedOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 	</owl:Class>
 	
@@ -919,26 +777,19 @@
     	<owl:disjointWith rdf:resource="WebImage"/>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>
-			  	<owl:someValuesFrom rdf:resource="Website"/>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>			  	<owl:someValuesFrom rdf:resource="Website"/>			</owl:Restriction>
 		</rdfs:subClassOf>     	
 		<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;sourceAccessedOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;sourceLastAccessedOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 	</owl:Class>
 	
@@ -956,26 +807,19 @@
     	<owl:disjointWith rdf:resource="WebNews"/>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>
-			  	<owl:someValuesFrom rdf:resource="Website"/>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="contributionPublicationEnvironment"/>			  	<owl:someValuesFrom rdf:resource="Website"/>			</owl:Restriction>
 		</rdfs:subClassOf>     	
 		<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;sourceAccessedOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
     	<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;sourceLastAccessedOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 	</owl:Class>
 	
@@ -986,17 +830,13 @@
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&foaf;name"/>
-             	</owl:onProperty>
-			  	<owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&agents;place"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 	</owl:Class>
 	
@@ -1067,8 +907,7 @@
 	<owl:ObjectProperty rdf:about="&pav;importedBy">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -1076,8 +915,7 @@
 	<owl:ObjectProperty rdf:about="&pav;importedFromSource">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -1085,8 +923,7 @@
 	<owl:ObjectProperty rdf:about="&pav;lastUpdateBy">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -1094,8 +931,7 @@
 	<owl:ObjectProperty rdf:about="&pav;createdBy">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -1103,15 +939,13 @@
 	<owl:ObjectProperty rdf:about="&pav;publishedBy">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:domain>
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -1119,8 +953,7 @@
 	<owl:DatatypeProperty rdf:about="&pav;acceptedOn">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:domain>
@@ -1129,8 +962,7 @@
 	<owl:DatatypeProperty rdf:about="&pav;submittedOn">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:domain>
@@ -1139,8 +971,7 @@
     <owl:ObjectProperty rdf:about="&pav;submittedBy">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -1148,8 +979,7 @@
 	<owl:DatatypeProperty rdf:about="&pav;publishedOn">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:domain>
@@ -1157,8 +987,7 @@
 	<owl:ObjectProperty rdf:about="&pav;contributedBy">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:domain>
@@ -1166,8 +995,7 @@
 	<owl:ObjectProperty rdf:about="&pav;contributors">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:domain>
@@ -1177,15 +1005,13 @@
 	<owl:ObjectProperty rdf:about="&foaf;fundedBy">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:domain>
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -1195,8 +1021,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-		    				<owl:Class rdf:about="Citation"/>
+			    		<owl:unionOf rdf:parseType="Collection">		    				<owl:Class rdf:about="Citation"/>
 		    				<owl:Class rdf:about="Publisher"/>   
 		    			</owl:unionOf>	
 				    </owl:Class>	
@@ -1207,8 +1032,7 @@
 	<owl:ObjectProperty rdf:about="&foaf;phone">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -1216,8 +1040,7 @@
 	<owl:ObjectProperty rdf:about="&foaf;depicts">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Citation"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Citation"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>

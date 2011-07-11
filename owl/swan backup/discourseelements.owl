@@ -11,18 +11,18 @@
     <!ENTITY dc   "http://purl.org/dc/elements/1.1/" >
  
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
-    <!ENTITY pav "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/pav/">
-  	<!ENTITY collections "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/">
-  	<!ENTITY agents "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/">
-  	<!ENTITY reification "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/">
-  	<!ENTITY discourserelationships "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/discourse-relationships/">
+    <!ENTITY pav "http://swan.mindinformatics.org/ontologies/1.2/pav/">
+  	<!ENTITY collections "http://swan.mindinformatics.org/ontologies/1.2/collections/">
+  	<!ENTITY agents "http://swan.mindinformatics.org/ontologies/1.2/agents/">
+  	<!ENTITY reification "http://swan.mindinformatics.org/ontologies/1.2/reification/">
+  	<!ENTITY discourserelationships "http://swan.mindinformatics.org/ontologies/1.2/discourse-relationships/">
     
     <!-- Main namespace -->
-    <!ENTITY discourseelements "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/discourse-elements/" >
+    <!ENTITY discourseelements "http://swan.mindinformatics.org/ontologies/1.2/discourse-elements/" >
     
     <!-- Files -->
   	<!ENTITY local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/discourseelements.owl">
-  	<!ENTITY path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/discourseelements.owl">
+  	<!ENTITY path "http://swan.mindinformatics.org/ontologies/1.2/discourseelements.owl">
   	<!ENTITY file "&path;">  
   	
   	<!-- Previous file -->
@@ -32,8 +32,8 @@
     <!ENTITY agents-local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/agents.owl">
     <!ENTITY discourserelationships-local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/discourserelationships.owl">
 
-    <!ENTITY agents-path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents.owl">
-    <!ENTITY discourserelationships-path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/discourserelationships.owl">
+    <!ENTITY agents-path "http://swan.mindinformatics.org/ontologies/1.2/agents.owl">
+    <!ENTITY discourserelationships-path "http://swan.mindinformatics.org/ontologies/1.2/discourserelationships.owl">
     
   	<!ENTITY agents-file "&agents-path;">
   	<!ENTITY discourserelationships-file "&discourserelationships-path;">
@@ -180,20 +180,14 @@
     	
     	<!-- Local -->
      	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty>
+			<owl:Restriction>			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="title"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>	
      	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty>
+			<owl:Restriction>			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="description"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>	
 		<rdfs:subClassOf>
 			<owl:Restriction>
@@ -257,46 +251,34 @@
     	</rdfs:subClassOf>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty>
+			<owl:Restriction>			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;importedOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>	
 		
     	<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;importedFirstOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 		
     	<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;importedLastOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty rdf:resource="&pav;importedFromSource"/>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+			<owl:Restriction>			  	<owl:onProperty rdf:resource="&pav;importedFromSource"/>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 		
     	<rdfs:subClassOf>
 			<owl:Restriction>
 			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;importedWithId"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>
 		
 		<!-- Human Provenance -->
@@ -318,12 +300,9 @@
     	</rdfs:subClassOf>
     	
     	<rdfs:subClassOf>
-			<owl:Restriction>
-			  	<owl:onProperty>
+			<owl:Restriction>			  	<owl:onProperty>
                		<owl:DatatypeProperty rdf:about="&pav;createdOn"/>
-             	</owl:onProperty>
-			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
-			</owl:Restriction>
+             	</owl:onProperty>			  	<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>			</owl:Restriction>
 		</rdfs:subClassOf>    	
     
     	<owl:disjointWith rdf:resource="&foaf;Document"/>
@@ -443,8 +422,7 @@
 	            <owl:allValuesFrom rdf:resource="&discourserelationships;consistentWith"/>
 	        </owl:Restriction>
         </rdfs:subClassOf>
-        -->
-	</owl:Class>
+        -->	</owl:Class>
 	
     <owl:Class rdf:about="ReifiedInconsistentWith" rdfs:label="(discourse-elements) Reified inconsistent with">
   		<rdfs:comment rdf:datatype="&xsd;string">
@@ -470,8 +448,7 @@
 	            <owl:allValuesFrom rdf:resource="&discourserelationships;inconsistentWith"/>
 	        </owl:Restriction>
         </rdfs:subClassOf>
-        -->
-	</owl:Class>
+        -->	</owl:Class>
 	
     <owl:Class rdf:about="ReifiedRelevantTo" rdfs:label="(discourse-elements) Reified relevant to">
   		<rdfs:comment rdf:datatype="&xsd;string">
@@ -497,8 +474,7 @@
 	            <owl:allValuesFrom rdf:resource="&discourserelationships;relevantTo"/>
 	        </owl:Restriction>
         </rdfs:subClassOf>
-        -->
-	</owl:Class>
+        -->	</owl:Class>
 
     <owl:Class rdf:about="ReifiedAlternativeTo" rdfs:label="(discourse-elements) Reified alternative to">
   		<rdfs:comment rdf:datatype="&xsd;string">
@@ -524,8 +500,7 @@
 	            <owl:allValuesFrom rdf:resource="&discourserelationships;alternativeTo"/>
 	        </owl:Restriction>
         </rdfs:subClassOf>
-        -->
-	</owl:Class>
+        -->	</owl:Class>
 	
 	<owl:Class rdf:about="CanonicalResearchStatement" rdfs:label="(discourse-elements) Canonical Research Statement">
     	<rdf:type rdf:resource="&owl;Class"/>
@@ -550,8 +525,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-				    		<owl:Class rdf:about="&collections;Item"/>
+			    		<owl:unionOf rdf:parseType="Collection">				    		<owl:Class rdf:about="&collections;Item"/>
 				    		<owl:Class rdf:about="&collections;Collection"/> 
 				    		<owl:Class rdf:about="&agents;PersonName"/> 
 				    	</owl:unionOf>	
@@ -563,8 +537,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-				    		<owl:Class rdf:about="&collections;Item"/>
+			    		<owl:unionOf rdf:parseType="Collection">				    		<owl:Class rdf:about="&collections;Item"/>
 				    		<owl:Class rdf:about="&collections;Collection"/> 
 				    		<owl:Class rdf:about="&agents;PersonName"/> 
 				    	</owl:unionOf>	
@@ -579,8 +552,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-				    		<owl:Class rdf:about="&foaf;Project"/>
+			    		<owl:unionOf rdf:parseType="Collection">				    		<owl:Class rdf:about="&foaf;Project"/>
 				    		<owl:Class rdf:about="&foaf;Agent"/> 
 				    		<owl:Class rdf:about="&foaf;OnlineAccount"/> 
 				    	</owl:unionOf>	
@@ -592,8 +564,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-				    		<owl:Class rdf:about="&foaf;Project"/>
+			    		<owl:unionOf rdf:parseType="Collection">				    		<owl:Class rdf:about="&foaf;Project"/>
 				    		<owl:Class rdf:about="&foaf;Agent"/> 
 				    		<owl:Class rdf:about="&foaf;OnlineAccount"/> 
 				    	</owl:unionOf>	
@@ -608,8 +579,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-				    		<owl:Class rdf:about="&foaf;Project"/>
+			    		<owl:unionOf rdf:parseType="Collection">				    		<owl:Class rdf:about="&foaf;Project"/>
 				    		<owl:Class rdf:about="&foaf;Agent"/> 
 				    		<owl:Class rdf:about="&foaf;OnlineAccount"/> 
 				    	</owl:unionOf>	
@@ -621,8 +591,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-				    		<owl:Class rdf:about="&foaf;Project"/>
+			    		<owl:unionOf rdf:parseType="Collection">				    		<owl:Class rdf:about="&foaf;Project"/>
 				    		<owl:Class rdf:about="&foaf;Agent"/> 
 				    		<owl:Class rdf:about="&foaf;OnlineAccount"/> 
 				    	</owl:unionOf>	
@@ -637,8 +606,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-				    		<owl:Class rdf:about="&foaf;Project"/>
+			    		<owl:unionOf rdf:parseType="Collection">				    		<owl:Class rdf:about="&foaf;Project"/>
 				    		<owl:Class rdf:about="&foaf;Agent"/> 
 				    		<owl:Class rdf:about="&foaf;OnlineAccount"/> 
 				    	</owl:unionOf>	
@@ -650,8 +618,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-				    		<owl:Class rdf:about="&foaf;Project"/>
+			    		<owl:unionOf rdf:parseType="Collection">				    		<owl:Class rdf:about="&foaf;Project"/>
 				    		<owl:Class rdf:about="&foaf;Agent"/> 
 				    		<owl:Class rdf:about="&foaf;OnlineAccount"/> 
 				    	</owl:unionOf>	
@@ -666,8 +633,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-				    		<owl:Class rdf:about="&foaf;Project"/>
+			    		<owl:unionOf rdf:parseType="Collection">				    		<owl:Class rdf:about="&foaf;Project"/>
 				    		<owl:Class rdf:about="&foaf;Agent"/> 
 				    		<owl:Class rdf:about="&foaf;OnlineAccount"/> 
 				    	</owl:unionOf>	
@@ -679,8 +645,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-				    		<owl:Class rdf:about="&foaf;Project"/>
+			    		<owl:unionOf rdf:parseType="Collection">				    		<owl:Class rdf:about="&foaf;Project"/>
 				    		<owl:Class rdf:about="&foaf;Agent"/> 
 				    		<owl:Class rdf:about="&foaf;OnlineAccount"/> 
 				    	</owl:unionOf>	
@@ -784,8 +749,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-				    		<owl:Class rdf:about="&foaf;Document"/>
+			    		<owl:unionOf rdf:parseType="Collection">				    		<owl:Class rdf:about="&foaf;Document"/>
 				    	</owl:unionOf>	
 				    </owl:Class>
 				</owl:complementOf>
@@ -859,8 +823,7 @@
 	<owl:ObjectProperty rdf:about="&pav;importedBy">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="DiscourseElement"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="DiscourseElement"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -868,8 +831,7 @@
 	<owl:ObjectProperty rdf:about="&pav;importedFromSource">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="DiscourseElement"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="DiscourseElement"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -877,8 +839,7 @@
 	<owl:ObjectProperty rdf:about="&pav;lastUpdateBy">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="DiscourseElement"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="DiscourseElement"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -886,8 +847,7 @@
 	<owl:ObjectProperty rdf:about="&pav;createdBy">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="DiscourseElement"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="DiscourseElement"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -895,15 +855,13 @@
 	<owl:ObjectProperty rdf:about="&pav;publishedBy">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="DiscourseElement"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="DiscourseElement"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:domain>
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="DiscourseElement"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="DiscourseElement"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -911,8 +869,7 @@
 	<owl:DatatypeProperty rdf:about="&pav;acceptedOn">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="DiscourseElement"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="DiscourseElement"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:domain>
@@ -920,8 +877,7 @@
 	<owl:DatatypeProperty rdf:about="&pav;submittedOn">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="DiscourseElement"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="DiscourseElement"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:domain>
@@ -929,8 +885,7 @@
 	<owl:ObjectProperty rdf:about="&pav;submittedBy">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="DiscourseElement"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="DiscourseElement"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
@@ -938,8 +893,7 @@
 	<owl:DatatypeProperty rdf:about="&pav;publishedOn">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="DiscourseElement"/>   	
+		    	<owl:complementOf>		    		<owl:Class rdf:about="DiscourseElement"/>   	
 				</owl:complementOf>
 		    </owl:Class>
         </rdfs:domain>

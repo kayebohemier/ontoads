@@ -12,11 +12,11 @@
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
     
     <!-- Main namespace -->
-    <!ENTITY collections "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/" >
+    <!ENTITY collections "http://swan.mindinformatics.org/ontologies/1.2/collections/" >
     
     <!-- Main Files -->
   	<!ENTITY local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/collections.owl">
-  	<!ENTITY path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections.owl">
+  	<!ENTITY path "http://swan.mindinformatics.org/ontologies/1.2/collections.owl">
   	<!ENTITY file "&path;">
 ]>
 
@@ -83,14 +83,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
     
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/element -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/element -->
     <owl:ObjectProperty rdf:about="element">
         <rdfs:comment rdf:datatype="&xsd;string"
             >element - The link to the members of a Set</rdfs:comment>
         <rdfs:domain rdf:resource="Collection"/>
     </owl:ObjectProperty>
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections.owl#firstItem -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections.owl#firstItem -->
     <owl:FunctionalProperty rdf:about="firstItem">
     	<rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:domain rdf:resource="List"/>
@@ -98,7 +98,7 @@
         <rdfs:range rdf:resource="ListItem"/>
     </owl:FunctionalProperty>
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/followedBy -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/followedBy -->
     <owl:ObjectProperty rdf:about="followedBy">
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:comment rdf:datatype="&xsd;string"
@@ -107,7 +107,7 @@
         <rdfs:range rdf:resource="ListItem"/>
     </owl:ObjectProperty>
     
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/item -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/item -->
     <owl:ObjectProperty rdf:about="item">
         <rdfs:comment rdf:datatype="&xsd;string"
             >item - The link to every item of the Bag</rdfs:comment>
@@ -116,7 +116,7 @@
         <rdfs:range rdf:resource="Item"/>
     </owl:ObjectProperty>
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/itemContent -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/itemContent -->
     <owl:ObjectProperty rdf:about="itemContent">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:comment rdf:datatype="&xsd;string"
@@ -124,14 +124,12 @@
         <rdfs:domain rdf:resource="Item"/>
         <rdfs:range>
 			<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class rdf:about="Item"/>
-		    	</owl:complementOf>
+		    	<owl:complementOf>		    		<owl:Class rdf:about="Item"/>		    	</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
     </owl:ObjectProperty>
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/lastItem -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/lastItem -->
     <owl:FunctionalProperty rdf:about="lastItem">
     	<rdf:type rdf:resource="&owl;ObjectProperty"/>
         <rdfs:comment rdf:datatype="&xsd;string"
@@ -141,7 +139,7 @@
         <rdfs:range rdf:resource="ListItem"/>
     </owl:FunctionalProperty>   
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/nextItem -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/nextItem -->
     <owl:ObjectProperty rdf:about="nextItem">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:comment rdf:datatype="&xsd;string"
@@ -149,7 +147,7 @@
         <rdfs:subPropertyOf rdf:resource="followedBy"/>
     </owl:ObjectProperty>
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/preceededBy -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/preceededBy -->
     <owl:ObjectProperty rdf:about="preceededBy">
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
         <rdfs:comment rdf:datatype="&xsd;string"
@@ -158,7 +156,7 @@
         <rdfs:range rdf:resource="ListItem"/>
     </owl:ObjectProperty>
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/previousItem -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/previousItem -->
     <owl:ObjectProperty rdf:about="previousItem">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:comment rdf:datatype="&xsd;string"
@@ -175,7 +173,7 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/size -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/size -->
     <owl:DatatypeProperty rdf:about="size">
         <rdfs:comment rdf:datatype="&xsd;string"
             >size - The number of item belonging to a collection</rdfs:comment>
@@ -192,7 +190,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/Item -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/Item -->
     <owl:Class rdf:about="Item" rdfs:label="(collections) Item">
         <rdfs:subClassOf rdf:resource="&owl;Thing"/>
         <owl:disjointWith rdf:resource="Collection"/>
@@ -200,14 +198,14 @@
             >Item - Element belonging to a Bag</rdfs:comment>
     </owl:Class>
     
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/ListItem -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/ListItem -->
     <owl:Class rdf:about="ListItem" rdfs:label="(collections) ListItem">
         <rdfs:subClassOf rdf:resource="Item"/>
         <rdfs:comment rdf:datatype="&xsd;string"
             >ListItem - Element belonging to a list</rdfs:comment>	
     </owl:Class>
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/List -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/List -->
     <owl:Class rdf:about="List" rdfs:label="(collections) List">
         <rdfs:subClassOf rdf:resource="Bag"/>
         <rdfs:comment rdf:datatype="&xsd;string"
@@ -227,7 +225,7 @@
 		</rdfs:subClassOf>	
     </owl:Class>
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/Bag -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/Bag -->
     <owl:Class rdf:about="Bag"  rdfs:label="(collections) Bag">
         <rdfs:subClassOf rdf:resource="Collection"/>
         <rdfs:comment rdf:datatype="&xsd;string"
@@ -235,14 +233,14 @@
         <owl:disjointWith rdf:resource="Set"/>
     </owl:Class>
     
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/Set -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/Set -->
     <owl:Class rdf:about="Set"  rdfs:label="(collections) Set">
         <rdfs:subClassOf rdf:resource="Collection"/>
         <rdfs:comment rdf:datatype="&xsd;string"
             >Set - A collection that cannot contain duplicate elements.</rdfs:comment>
     </owl:Class>
     
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/Collection -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/Collection -->
     <owl:Class rdf:about="Collection"  rdfs:label="(collections) Collection">
         <rdfs:subClassOf rdf:resource="&owl;Thing"/>
         <rdfs:comment rdf:datatype="&xsd;string"

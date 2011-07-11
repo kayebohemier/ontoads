@@ -12,11 +12,11 @@
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
     
     <!-- Main namespace -->
-    <!ENTITY pav "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/pav/" >
+    <!ENTITY pav "http://swan.mindinformatics.org/ontologies/1.2/pav/" >
     
     <!-- Files -->
   	<!ENTITY local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/pav.owl">
-  	<!ENTITY path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/pav.owl">
+  	<!ENTITY path "http://swan.mindinformatics.org/ontologies/1.2/pav.owl">
   	<!ENTITY file "&path;">
 
 ]>

@@ -11,10 +11,10 @@
     <!ENTITY dc   "http://purl.org/dc/elements/1.1/" >
     
     <!-- Main namespace -->
-    <!ENTITY discourserelationships "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/discourse-relationships/" >
+    <!ENTITY discourserelationships "http://swan.mindinformatics.org/ontologies/1.2/discourse-relationships/" >
     
     <!-- Files -->
-  	<!ENTITY path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/discourserelationships.owl">
+  	<!ENTITY path "http://swan.mindinformatics.org/ontologies/1.2/discourserelationships.owl">
   	<!ENTITY local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/discourserelationships.owl">  	
   	<!ENTITY file "&path;">
 ]>

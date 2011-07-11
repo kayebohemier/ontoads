@@ -12,23 +12,23 @@
     <!ENTITY skos "http://www.w3.org/2008/05/skos#" >
  
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/">
-    <!ENTITY pav "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/pav/">
-  	<!ENTITY collections "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/">
-  	<!ENTITY reification "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/">
-  	<!ENTITY agents "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/">
-  	<!ENTITY citations "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/citations/">
-  	<!ENTITY lses "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/lses/">
-  	<!ENTITY qualifiers "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/qualifiers/">
-  	<!ENTITY discourserelationships "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/discourse-relationships/">
-    <!ENTITY discourseelements "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/discourse-elements/" >
-    <!ENTITY rsqualifiers "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/rsqualifiers/">
+    <!ENTITY pav "http://swan.mindinformatics.org/ontologies/1.2/pav/">
+  	<!ENTITY collections "http://swan.mindinformatics.org/ontologies/1.2/collections/">
+  	<!ENTITY reification "http://swan.mindinformatics.org/ontologies/1.2/reification/">
+  	<!ENTITY agents "http://swan.mindinformatics.org/ontologies/1.2/agents/">
+  	<!ENTITY citations "http://swan.mindinformatics.org/ontologies/1.2/citations/">
+  	<!ENTITY lses "http://swan.mindinformatics.org/ontologies/1.2/lses/">
+  	<!ENTITY qualifiers "http://swan.mindinformatics.org/ontologies/1.2/qualifiers/">
+  	<!ENTITY discourserelationships "http://swan.mindinformatics.org/ontologies/1.2/discourse-relationships/">
+    <!ENTITY discourseelements "http://swan.mindinformatics.org/ontologies/1.2/discourse-elements/" >
+    <!ENTITY rsqualifiers "http://swan.mindinformatics.org/ontologies/1.2/rsqualifiers/">
     
     <!-- Main namespace -->
-    <!ENTITY swancommons "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/swan-commons/" >
+    <!ENTITY swancommons "http://swan.mindinformatics.org/ontologies/1.2/swan-commons/" >
     
     <!-- Files -->
   	<!ENTITY local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/swan.owl">
-  	<!ENTITY path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/swan.owl">
+  	<!ENTITY path "http://swan.mindinformatics.org/ontologies/1.2/swan.owl">
   	<!ENTITY file "&path;">  
   	
   	<!-- Previous file -->
@@ -42,12 +42,12 @@
     <!ENTITY citations-local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/citations.owl">
     <!ENTITY lses-local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/lses.owl">
     
-    <!ENTITY qualifiers-path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/qualifiers.owl">
-    <!ENTITY discourseelements-path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/discourseelements.owl">
-    <!ENTITY de-ext-rs-qualifiers-path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/de-ext-rs-qualifiers.owl">
-	<!ENTITY lses-ext-gene-ontology-path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/lses-ext-gene-ontology.owl">
-	<!ENTITY citations-path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/citations.owl">
-	<!ENTITY lses-path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/lses.owl">
+    <!ENTITY qualifiers-path "http://swan.mindinformatics.org/ontologies/1.2/qualifiers.owl">
+    <!ENTITY discourseelements-path "http://swan.mindinformatics.org/ontologies/1.2/discourseelements.owl">
+    <!ENTITY de-ext-rs-qualifiers-path "http://swan.mindinformatics.org/ontologies/1.2/de-ext-rs-qualifiers.owl">
+	<!ENTITY lses-ext-gene-ontology-path "http://swan.mindinformatics.org/ontologies/1.2/lses-ext-gene-ontology.owl">
+	<!ENTITY citations-path "http://swan.mindinformatics.org/ontologies/1.2/citations.owl">
+	<!ENTITY lses-path "http://swan.mindinformatics.org/ontologies/1.2/lses.owl">
     
     <!ENTITY qualifiers-file "&qualifiers-path;">
   	<!ENTITY discourseelements-file "&discourseelements-path;">
@@ -252,8 +252,7 @@
     	<owl:disjointWith rdf:resource="&foaf;Agent"/>
     	<owl:disjointWith rdf:resource="&foaf;OnlineAccount"/>
     	<owl:disjointWith rdf:resource="&collections;Collection"/>
-    	<owl:disjointWith rdf:resource="&collections;Item"/>
-	</owl:Class> 
+    	<owl:disjointWith rdf:resource="&collections;Item"/>	</owl:Class> 
 	
 	<owl:Class rdf:about="&lses;LseRecord">
     	<owl:disjointWith rdf:resource="&agents;PersonName"/>
@@ -262,8 +261,7 @@
     	<owl:disjointWith rdf:resource="&foaf;Agent"/>
     	<owl:disjointWith rdf:resource="&foaf;OnlineAccount"/>
     	<owl:disjointWith rdf:resource="&collections;Collection"/>
-    	<owl:disjointWith rdf:resource="&collections;Item"/>
-	</owl:Class> 
+    	<owl:disjointWith rdf:resource="&collections;Item"/>	</owl:Class> 
     
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -925,10 +923,8 @@
      <owl:ObjectProperty rdf:about="&foaf;phone">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class>
-			    		<owl:unionOf rdf:parseType="Collection">
-				        	<owl:Class rdf:about="&qualifiers;Qualifier"/>
+		    	<owl:complementOf>		    		<owl:Class>
+			    		<owl:unionOf rdf:parseType="Collection">				        	<owl:Class rdf:about="&qualifiers;Qualifier"/>
 				        	<owl:Class rdf:about="&skos;ConceptScheme"/>
 				        	<owl:Class rdf:about="&skos;Collection"/>
 				        	<owl:Class rdf:about="&skos;Concept"/>
@@ -946,8 +942,7 @@
 			    		<owl:unionOf rdf:parseType="Collection">
 				        	<owl:Class rdf:about="&qualifiers;Qualifier"/>
 				        </owl:unionOf>
-					</owl:Class>        	
-		    	</owl:complementOf>
+					</owl:Class>        			    	</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -962,16 +957,14 @@
 				        	<owl:Class rdf:about="&skos;Collection"/>
 				        	<owl:Class rdf:about="&skos;Concept"/>
 				        </owl:unionOf>
-				    </owl:Class>
-		    	</owl:complementOf>
+				    </owl:Class>		    	</owl:complementOf>
 		    </owl:Class>
         </rdfs:range>
     </owl:ObjectProperty>   
     <owl:ObjectProperty rdf:about="&foaf;mbox">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class>
+		    	<owl:complementOf>		    		<owl:Class>
 			    		<owl:unionOf rdf:parseType="Collection">
 				        	<owl:Class rdf:about="&qualifiers;Qualifier"/>
 				        	<owl:Class rdf:about="&skos;ConceptScheme"/>
@@ -986,8 +979,7 @@
     <owl:ObjectProperty rdf:about="&pav;lastUpdateBy">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class>
+		    	<owl:complementOf>		    		<owl:Class>
 			    		<owl:unionOf rdf:parseType="Collection">
 				        	<owl:Class rdf:about="&qualifiers;Qualifier"/>
 				        	<owl:Class rdf:about="&skos;ConceptScheme"/>
@@ -1002,8 +994,7 @@
     <owl:ObjectProperty rdf:about="&pav;createdBy">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class>
+		    	<owl:complementOf>		    		<owl:Class>
 			    		<owl:unionOf rdf:parseType="Collection">
 				        	<owl:Class rdf:about="&qualifiers;Qualifier"/>
 				        	<owl:Class rdf:about="&skos;ConceptScheme"/>
@@ -1018,8 +1009,7 @@
     <owl:ObjectProperty rdf:about="&pav;importedFromSource">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class>
+		    	<owl:complementOf>		    		<owl:Class>
 			    		<owl:unionOf rdf:parseType="Collection">
 				        	<owl:Class rdf:about="&qualifiers;Qualifier"/>
 				        	<owl:Class rdf:about="&skos;ConceptScheme"/>
@@ -1034,8 +1024,7 @@
 	<owl:ObjectProperty rdf:about="&pav;publishedBy">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class>
+		    	<owl:complementOf>		    		<owl:Class>
 			    		<owl:unionOf rdf:parseType="Collection">
 				        	<owl:Class rdf:about="&qualifiers;Qualifier"/>
 				        	<owl:Class rdf:about="&skos;ConceptScheme"/>
@@ -1050,8 +1039,7 @@
 	<owl:ObjectProperty rdf:about="&pav;submittedBy">
         <rdfs:range>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class>
+		    	<owl:complementOf>		    		<owl:Class>
 			    		<owl:unionOf rdf:parseType="Collection">
 				        	<owl:Class rdf:about="&qualifiers;Qualifier"/>
 				        	<owl:Class rdf:about="&skos;ConceptScheme"/>
@@ -1066,8 +1054,7 @@
     <owl:DatatypeProperty rdf:about="&pav;sourceAccessedOn">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class>
+		    	<owl:complementOf>		    		<owl:Class>
 			    		<owl:unionOf rdf:parseType="Collection">
 				        	<owl:Class rdf:about="&qualifiers;Qualifier"/>
 				        </owl:unionOf>
@@ -1079,8 +1066,7 @@
     <owl:DatatypeProperty rdf:about="&pav;sourceLastAccessedOn">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class>
+		    	<owl:complementOf>		    		<owl:Class>
 			    		<owl:unionOf rdf:parseType="Collection">
 				        	<owl:Class rdf:about="&qualifiers;Qualifier"/>
 				        </owl:unionOf>
@@ -1092,8 +1078,7 @@
     <owl:DatatypeProperty rdf:about="&pav;sourceFirstAccessedOn">
         <rdfs:domain>
         	<owl:Class>
-		    	<owl:complementOf>
-		    		<owl:Class>
+		    	<owl:complementOf>		    		<owl:Class>
 			    		<owl:unionOf rdf:parseType="Collection">
 				        	<owl:Class rdf:about="&qualifiers;Qualifier"/>
 				        </owl:unionOf>

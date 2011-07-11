@@ -16,7 +16,7 @@
     <!-- Files -->
     <!ENTITY local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/skos-essential.owl">  
     
-  	<!ENTITY path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/skos-essential.owl">
+  	<!ENTITY path "http://swan.mindinformatics.org/ontologies/1.2/skos-essential.owl">
   	<!ENTITY file "&path;">
 ]>
 <rdf:RDF xml:base="&skos;"

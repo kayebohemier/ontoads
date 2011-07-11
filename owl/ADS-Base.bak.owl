@@ -9,31 +9,31 @@
     <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY pav "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/pav/" >
-    <!ENTITY agents "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/" >
-    <!ENTITY reification "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/" >
-    <!ENTITY collections "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/" >
-    <!ENTITY ADS-Base "https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#" >
+    <!ENTITY pav "http://swan.mindinformatics.org/ontologies/1.2/pav/" >
+    <!ENTITY agents "http://swan.mindinformatics.org/ontologies/1.2/agents/" >
+    <!ENTITY reification "http://swan.mindinformatics.org/ontologies/1.2/reification/" >
+    <!ENTITY collections "http://swan.mindinformatics.org/ontologies/1.2/collections/" >
+    <!ENTITY ADS-Base "https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#" >
 ]>
 
 
-<rdf:RDF xmlns="https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#"
-     xml:base="https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl"
-     xmlns:ADS-Base="https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#"
+<rdf:RDF xmlns="https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#"
+     xml:base="https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl"
+     xmlns:ADS-Base="https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:agents="https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/"
-     xmlns:reification="https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/"
+     xmlns:agents="http://swan.mindinformatics.org/ontologies/1.2/agents/"
+     xmlns:reification="http://swan.mindinformatics.org/ontologies/1.2/reification/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
-     xmlns:pav="https://raw.github.com/kayebohemier/ontoads/master/owl/swan/pav/"
+     xmlns:pav="http://swan.mindinformatics.org/ontologies/1.2/pav/"
      xmlns:skos2="http://www.w3.org/2008/05/skos#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:collections="https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/">
+     xmlns:collections="http://swan.mindinformatics.org/ontologies/1.2/collections/">
     <owl:Ontology rdf:about="">
-        <owl:imports rdf:resource="https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents.owl"/>
-        <owl:imports rdf:resource="https://raw.github.com/kayebohemier/ontoads/master/owl/swan/skos-essential.owl"/>
+        <owl:imports rdf:resource="http://swan.mindinformatics.org/ontologies/1.2/agents.owl"/>
+        <owl:imports rdf:resource="http://swan.mindinformatics.org/ontologies/1.2/skos-essential.owl"/>
     </owl:Ontology>
     
 
@@ -62,43 +62,43 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/item -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/item -->
 
     <owl:ObjectProperty rdf:about="&collections;item"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/itemContent -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/itemContent -->
 
     <owl:ObjectProperty rdf:about="&collections;itemContent"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/nextItem -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/nextItem -->
 
     <owl:ObjectProperty rdf:about="&collections;nextItem"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/previousItem -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/previousItem -->
 
     <owl:ObjectProperty rdf:about="&collections;previousItem"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/object -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/reification/object -->
 
     <owl:ObjectProperty rdf:about="&reification;object"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/subject -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/reification/subject -->
 
     <owl:ObjectProperty rdf:about="&reification;subject"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#aboutScienceProcess -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#aboutScienceProcess -->
 
     <owl:ObjectProperty rdf:about="#aboutScienceProcess">
         <rdfs:range rdf:resource="#ScienceProcess"/>
@@ -106,7 +106,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#aboutScienceProduct -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#aboutScienceProduct -->
 
     <owl:ObjectProperty rdf:about="#aboutScienceProduct">
         <rdfs:range rdf:resource="#ScienceProduct"/>
@@ -114,7 +114,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#aboutSource -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#aboutSource -->
 
     <owl:ObjectProperty rdf:about="#aboutSource">
         <rdfs:range rdf:resource="#AstronomicalSource"/>
@@ -122,7 +122,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#affiliation -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#affiliation -->
 
     <owl:ObjectProperty rdf:about="#affiliation">
         <rdfs:comment
@@ -133,7 +133,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#affiliationContext -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#affiliationContext -->
 
     <owl:ObjectProperty rdf:about="#affiliationContext">
         <rdfs:domain rdf:resource="#Affiliation"/>
@@ -141,7 +141,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#asAResultOfProposal -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#asAResultOfProposal -->
 
     <owl:ObjectProperty rdf:about="#asAResultOfProposal">
         <rdfs:comment
@@ -151,7 +151,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#asAResultOfProposals -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#asAResultOfProposals -->
 
     <owl:ObjectProperty rdf:about="#asAResultOfProposals">
         <rdfs:range rdf:resource="#ProposalList"/>
@@ -159,7 +159,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#associatedWith -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#associatedWith -->
 
     <owl:ObjectProperty rdf:about="#associatedWith">
         <rdfs:range rdf:resource="&foaf;Organization"/>
@@ -167,7 +167,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#atComputingCenter -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#atComputingCenter -->
 
     <owl:ObjectProperty rdf:about="#atComputingCenter">
         <rdfs:range rdf:resource="#ComputingCenter"/>
@@ -176,7 +176,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#atLaboratory -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#atLaboratory -->
 
     <owl:ObjectProperty rdf:about="#atLaboratory">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -186,7 +186,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#atObservatory -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#atObservatory -->
 
     <owl:ObjectProperty rdf:about="#atObservatory">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -198,7 +198,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#belongsToProposalSet -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#belongsToProposalSet -->
 
     <owl:ObjectProperty rdf:about="#belongsToProposalSet">
         <rdfs:domain rdf:resource="#Proposal"/>
@@ -207,13 +207,13 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#curatedAt -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#curatedAt -->
 
     <owl:ObjectProperty rdf:about="#curatedAt"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#currentAffiliation -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#currentAffiliation -->
 
     <owl:ObjectProperty rdf:about="#currentAffiliation">
         <rdfs:range rdf:resource="&foaf;Organization"/>
@@ -221,7 +221,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#for -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#for -->
 
     <owl:ObjectProperty rdf:about="#for">
         <rdfs:range>
@@ -236,7 +236,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#fromSurvey -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#fromSurvey -->
 
     <owl:ObjectProperty rdf:about="#fromSurvey">
         <rdfs:range rdf:resource="#Survey"/>
@@ -244,7 +244,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#hasAffiliation -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#hasAffiliation -->
 
     <owl:ObjectProperty rdf:about="#hasAffiliation">
         <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
@@ -263,7 +263,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#hasAstronomicalSource -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#hasAstronomicalSource -->
 
     <owl:ObjectProperty rdf:about="#hasAstronomicalSource">
         <rdfs:range rdf:resource="#AstronomicalSource"/>
@@ -271,7 +271,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#hasDataProduct -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#hasDataProduct -->
 
     <owl:ObjectProperty rdf:about="#hasDataProduct">
         <rdfs:range rdf:resource="#DataProduct"/>
@@ -279,7 +279,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#hasDataTemplate -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#hasDataTemplate -->
 
     <owl:ObjectProperty rdf:about="#hasDataTemplate">
         <rdfs:range rdf:resource="#DataTemplate"/>
@@ -287,7 +287,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#hasMember -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#hasMember -->
 
     <owl:ObjectProperty rdf:about="#hasMember">
         <rdfs:range>
@@ -303,7 +303,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#hasMembership -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#hasMembership -->
 
     <owl:ObjectProperty rdf:about="#hasMembership">
         <rdfs:comment
@@ -323,7 +323,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#inCollaboration -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#inCollaboration -->
 
     <owl:ObjectProperty rdf:about="#inCollaboration">
         <rdfs:range rdf:resource="#Collaboration"/>
@@ -332,7 +332,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#investigator -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#investigator -->
 
     <owl:ObjectProperty rdf:about="#investigator">
         <rdfs:domain rdf:resource="#Proposal"/>
@@ -348,7 +348,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#isAbout -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#isAbout -->
 
     <owl:ObjectProperty rdf:about="#isAbout">
         <rdfs:range rdf:resource="#ScienceProcess"/>
@@ -357,7 +357,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#keywordConcept -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#keywordConcept -->
 
     <owl:ObjectProperty rdf:about="#keywordConcept">
         <rdfs:range rdf:resource="&skos2;Concept"/>
@@ -365,7 +365,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#keywordConceptScheme -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#keywordConceptScheme -->
 
     <owl:ObjectProperty rdf:about="#keywordConceptScheme">
         <rdfs:range rdf:resource="&skos2;ConceptScheme"/>
@@ -373,7 +373,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#minedBy -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#minedBy -->
 
     <owl:ObjectProperty rdf:about="#minedBy">
         <rdfs:range>
@@ -388,7 +388,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#oaka -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#oaka -->
 
     <owl:ObjectProperty rdf:about="#oaka">
         <rdfs:domain rdf:resource="&foaf;Organization"/>
@@ -397,7 +397,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#operatedBy -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#operatedBy -->
 
     <owl:ObjectProperty rdf:about="#operatedBy">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -423,7 +423,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#organizationName -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#organizationName -->
 
     <owl:ObjectProperty rdf:about="#organizationName">
         <rdfs:domain rdf:resource="#Affiliation"/>
@@ -432,7 +432,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#partOfOrganization -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#partOfOrganization -->
 
     <owl:ObjectProperty rdf:about="#partOfOrganization">
         <rdfs:range rdf:resource="&foaf;Organization"/>
@@ -440,7 +440,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#principalInvestigator -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#principalInvestigator -->
 
     <owl:ObjectProperty rdf:about="#principalInvestigator">
         <rdfs:domain rdf:resource="#Proposal"/>
@@ -456,7 +456,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#sponsoredBy -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#sponsoredBy -->
 
     <owl:ObjectProperty rdf:about="#sponsoredBy">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -466,7 +466,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#toAgency -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#toAgency -->
 
     <owl:ObjectProperty rdf:about="#toAgency">
         <rdfs:range rdf:resource="&foaf;Organization"/>
@@ -475,7 +475,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#toComputingAgency -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#toComputingAgency -->
 
     <owl:ObjectProperty rdf:about="#toComputingAgency">
         <rdfs:range rdf:resource="#ComputingAgency"/>
@@ -484,7 +484,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#toFundingAgency -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#toFundingAgency -->
 
     <owl:ObjectProperty rdf:about="#toFundingAgency">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -497,7 +497,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#toLaboratoryAgency -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#toLaboratoryAgency -->
 
     <owl:ObjectProperty rdf:about="#toLaboratoryAgency">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -515,7 +515,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#toObservingAgency -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#toObservingAgency -->
 
     <owl:ObjectProperty rdf:about="#toObservingAgency">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -533,7 +533,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#underComputingProgram -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#underComputingProgram -->
 
     <owl:ObjectProperty rdf:about="#underComputingProgram">
         <rdfs:range rdf:resource="#ComputingProgram"/>
@@ -542,7 +542,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#underFundingProgram -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#underFundingProgram -->
 
     <owl:ObjectProperty rdf:about="#underFundingProgram">
         <rdfs:comment
@@ -553,7 +553,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#underLaboratoryProgram -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#underLaboratoryProgram -->
 
     <owl:ObjectProperty rdf:about="#underLaboratoryProgram">
         <rdfs:range rdf:resource="#LaboratoryProgram"/>
@@ -562,7 +562,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#underObservationProgram -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#underObservationProgram -->
 
     <owl:ObjectProperty rdf:about="#underObservationProgram">
         <rdfs:comment
@@ -573,7 +573,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#underProgram -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#underProgram -->
 
     <owl:ObjectProperty rdf:about="#underProgram">
         <rdfs:comment
@@ -583,7 +583,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#usingInstrument -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#usingInstrument -->
 
     <owl:ObjectProperty rdf:about="#usingInstrument">
         <rdfs:range rdf:resource="#Instrument"/>
@@ -592,7 +592,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#usingScienceInfrastructure -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#usingScienceInfrastructure -->
 
     <owl:ObjectProperty rdf:about="#usingScienceInfrastructure">
         <rdfs:range rdf:resource="#ScienceInfrastructure"/>
@@ -611,7 +611,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#accepted? -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#accepted? -->
 
     <owl:DatatypeProperty rdf:about="#accepted?">
         <rdfs:range rdf:resource="&xsd;boolean"/>
@@ -620,7 +620,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#afilliationText -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#afilliationText -->
 
     <owl:DatatypeProperty rdf:about="#afilliationText">
         <rdfs:range rdf:resource="&rdfs;Literal"/>
@@ -629,7 +629,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#atTime -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#atTime -->
 
     <owl:DatatypeProperty rdf:about="#atTime">
         <rdfs:range rdf:resource="&xsd;dateTime"/>
@@ -637,7 +637,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#dataProduct? -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#dataProduct? -->
 
     <owl:DatatypeProperty rdf:about="#dataProduct?">
         <rdfs:range rdf:resource="&xsd;boolean"/>
@@ -645,7 +645,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#dataTemplate? -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#dataTemplate? -->
 
     <owl:DatatypeProperty rdf:about="#dataTemplate?">
         <rdfs:range rdf:resource="&xsd;boolean"/>
@@ -653,7 +653,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#dataType -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#dataType -->
 
     <owl:DatatypeProperty rdf:about="#dataType">
         <rdfs:range rdf:resource="&rdfs;Literal"/>
@@ -669,7 +669,7 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#dataURL -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#dataURL -->
 
     <owl:DatatypeProperty rdf:about="#dataURL">
         <rdfs:comment xml:lang="en"
@@ -689,7 +689,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#fromTime -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#fromTime -->
 
     <owl:DatatypeProperty rdf:about="#fromTime">
         <rdfs:range rdf:resource="&xsd;dateTime"/>
@@ -698,7 +698,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#fundingRequired? -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#fundingRequired? -->
 
     <owl:DatatypeProperty rdf:about="#fundingRequired?">
         <rdfs:range rdf:resource="&xsd;boolean"/>
@@ -707,7 +707,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#grantId -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#grantId -->
 
     <owl:DatatypeProperty rdf:about="#grantId">
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -716,7 +716,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#hasMetadataString -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#hasMetadataString -->
 
     <owl:DatatypeProperty rdf:about="#hasMetadataString">
         <rdfs:range rdf:resource="&rdfs;Literal"/>
@@ -724,7 +724,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#isOriginalSource? -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#isOriginalSource? -->
 
     <owl:DatatypeProperty rdf:about="#isOriginalSource?">
         <rdfs:range rdf:resource="&xsd;boolean"/>
@@ -740,7 +740,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#keywordText -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#keywordText -->
 
     <owl:DatatypeProperty rdf:about="#keywordText">
         <rdfs:range rdf:resource="&rdfs;Literal"/>
@@ -748,7 +748,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#languageIn -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#languageIn -->
 
     <owl:DatatypeProperty rdf:about="#languageIn">
         <rdfs:range rdf:resource="&rdfs;Literal"/>
@@ -756,7 +756,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#location -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#location -->
 
     <owl:DatatypeProperty rdf:about="#location">
         <rdfs:range rdf:resource="&xsd;dateTime"/>
@@ -765,7 +765,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#name -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#name -->
 
     <owl:DatatypeProperty rdf:about="#name">
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -773,7 +773,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#normDescription -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#normDescription -->
 
     <owl:DatatypeProperty rdf:about="#normDescription">
         <rdfs:range rdf:resource="&rdfs;Literal"/>
@@ -781,7 +781,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#normName -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#normName -->
 
     <owl:DatatypeProperty rdf:about="#normName">
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -789,7 +789,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#organizationText -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#organizationText -->
 
     <owl:DatatypeProperty rdf:about="#organizationText">
         <rdfs:range rdf:resource="&rdfs;Literal"/>
@@ -805,7 +805,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#templateString -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#templateString -->
 
     <owl:DatatypeProperty rdf:about="#templateString">
         <rdfs:domain rdf:resource="#DataTemplate"/>
@@ -813,7 +813,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#templateType -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#templateType -->
 
     <owl:DatatypeProperty rdf:about="#templateType">
         <rdfs:range rdf:resource="&rdfs;Literal"/>
@@ -821,7 +821,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#title -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#title -->
 
     <owl:DatatypeProperty rdf:about="#title">
         <rdfs:range rdf:resource="&xsd;string"/>
@@ -829,7 +829,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#toTime -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#toTime -->
 
     <owl:DatatypeProperty rdf:about="#toTime">
         <rdfs:range rdf:resource="&xsd;dateTime"/>
@@ -849,31 +849,31 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/Person -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/agents/Person -->
 
     <owl:Class rdf:about="&agents;Person"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/PersonName -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/agents/PersonName -->
 
     <owl:Class rdf:about="&agents;PersonName"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/List -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/List -->
 
     <owl:Class rdf:about="&collections;List"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/ListItem -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/collections/ListItem -->
 
     <owl:Class rdf:about="&collections;ListItem"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/BinaryRelationship -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/reification/BinaryRelationship -->
 
     <owl:Class rdf:about="&reification;BinaryRelationship"/>
     
@@ -927,7 +927,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Affiliation -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Affiliation -->
 
     <owl:Class rdf:about="#Affiliation">
         <rdfs:subClassOf>
@@ -956,13 +956,13 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#AffiliationHistory -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#AffiliationHistory -->
 
     <owl:Class rdf:about="#AffiliationHistory"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#AirBasedObservatory -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#AirBasedObservatory -->
 
     <owl:Class rdf:about="#AirBasedObservatory">
         <rdfs:subClassOf rdf:resource="#Observatory"/>
@@ -970,7 +970,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Analysis -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Analysis -->
 
     <owl:Class rdf:about="#Analysis">
         <rdfs:subClassOf rdf:resource="#ScienceProcess"/>
@@ -978,7 +978,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#AstronomicalSource -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#AstronomicalSource -->
 
     <owl:Class rdf:about="#AstronomicalSource">
         <rdfs:comment
@@ -987,7 +987,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#AstronomicalSourceTemplate -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#AstronomicalSourceTemplate -->
 
     <owl:Class rdf:about="#AstronomicalSourceTemplate">
         <rdfs:subClassOf rdf:resource="#DataTemplate"/>
@@ -995,7 +995,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Collaboration -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Collaboration -->
 
     <owl:Class rdf:about="#Collaboration">
         <rdfs:label
@@ -1007,7 +1007,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ComputerTimeProposal -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ComputerTimeProposal -->
 
     <owl:Class rdf:about="#ComputerTimeProposal">
         <rdfs:subClassOf rdf:resource="#TimeProposal"/>
@@ -1015,7 +1015,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ComputingAgency -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ComputingAgency -->
 
     <owl:Class rdf:about="#ComputingAgency">
         <rdfs:subClassOf rdf:resource="#ScienceInfrastructureAgency"/>
@@ -1023,7 +1023,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ComputingCenter -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ComputingCenter -->
 
     <owl:Class rdf:about="#ComputingCenter">
         <rdfs:subClassOf rdf:resource="#ScienceInfrastructure"/>
@@ -1031,7 +1031,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ComputingProgram -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ComputingProgram -->
 
     <owl:Class rdf:about="#ComputingProgram">
         <rdfs:subClassOf rdf:resource="#Program"/>
@@ -1039,7 +1039,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Curation -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Curation -->
 
     <owl:Class rdf:about="#Curation">
         <rdfs:subClassOf rdf:resource="#ScienceProcess"/>
@@ -1047,7 +1047,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#CurationAgency -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#CurationAgency -->
 
     <owl:Class rdf:about="#CurationAgency">
         <rdfs:subClassOf rdf:resource="&foaf;Organization"/>
@@ -1055,7 +1055,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#DataCenter -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#DataCenter -->
 
     <owl:Class rdf:about="#DataCenter">
         <rdfs:subClassOf rdf:resource="#ComputingCenter"/>
@@ -1063,7 +1063,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#DataProduct -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#DataProduct -->
 
     <owl:Class rdf:about="#DataProduct">
         <rdfs:subClassOf rdf:resource="#ScienceProduct"/>
@@ -1071,7 +1071,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#DataProductTemplate -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#DataProductTemplate -->
 
     <owl:Class rdf:about="#DataProductTemplate">
         <rdfs:subClassOf rdf:resource="#DataTemplate"/>
@@ -1079,7 +1079,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#DataTemplate -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#DataTemplate -->
 
     <owl:Class rdf:about="#DataTemplate">
         <rdfs:comment
@@ -1088,7 +1088,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Education -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Education -->
 
     <owl:Class rdf:about="#Education">
         <rdfs:subClassOf rdf:resource="#ScienceProcess"/>
@@ -1096,7 +1096,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Experiment -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Experiment -->
 
     <owl:Class rdf:about="#Experiment">
         <rdfs:subClassOf rdf:resource="#ScienceProcess"/>
@@ -1104,7 +1104,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#FundingAgency -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#FundingAgency -->
 
     <owl:Class rdf:about="#FundingAgency">
         <rdfs:subClassOf rdf:resource="&foaf;Organization"/>
@@ -1114,7 +1114,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#FundingProgram -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#FundingProgram -->
 
     <owl:Class rdf:about="#FundingProgram">
         <rdfs:subClassOf rdf:resource="#Program"/>
@@ -1124,7 +1124,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#GroundBasedObservatory -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#GroundBasedObservatory -->
 
     <owl:Class rdf:about="#GroundBasedObservatory">
         <rdfs:subClassOf rdf:resource="#Observatory"/>
@@ -1132,7 +1132,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#HardwareProduct -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#HardwareProduct -->
 
     <owl:Class rdf:about="#HardwareProduct">
         <rdfs:subClassOf rdf:resource="#ScienceProduct"/>
@@ -1140,7 +1140,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#InfrastructureDevelopment -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#InfrastructureDevelopment -->
 
     <owl:Class rdf:about="#InfrastructureDevelopment">
         <rdfs:subClassOf rdf:resource="#ScienceProcess"/>
@@ -1148,7 +1148,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#InfrastructureProduct -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#InfrastructureProduct -->
 
     <owl:Class rdf:about="#InfrastructureProduct">
         <rdfs:subClassOf rdf:resource="#ScienceProduct"/>
@@ -1156,7 +1156,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#InfrastructureProductProposal -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#InfrastructureProductProposal -->
 
     <owl:Class rdf:about="#InfrastructureProductProposal">
         <rdfs:subClassOf rdf:resource="#ProductProposal"/>
@@ -1164,7 +1164,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Instrument -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Instrument -->
 
     <owl:Class rdf:about="#Instrument">
         <rdfs:subClassOf rdf:resource="#ScienceInfrastructure"/>
@@ -1172,7 +1172,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#LabTimeProposal -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#LabTimeProposal -->
 
     <owl:Class rdf:about="#LabTimeProposal">
         <rdfs:subClassOf rdf:resource="#TimeProposal"/>
@@ -1180,7 +1180,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Laboratory -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Laboratory -->
 
     <owl:Class rdf:about="#Laboratory">
         <rdfs:subClassOf rdf:resource="#ScienceInfrastructure"/>
@@ -1188,7 +1188,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#LaboratoryAgency -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#LaboratoryAgency -->
 
     <owl:Class rdf:about="#LaboratoryAgency">
         <rdfs:subClassOf rdf:resource="#ScienceInfrastructureAgency"/>
@@ -1196,7 +1196,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#LaboratoryProgram -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#LaboratoryProgram -->
 
     <owl:Class rdf:about="#LaboratoryProgram">
         <rdfs:subClassOf rdf:resource="#Program"/>
@@ -1204,7 +1204,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Membership -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Membership -->
 
     <owl:Class rdf:about="#Membership">
         <rdfs:subClassOf>
@@ -1235,7 +1235,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Observation -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Observation -->
 
     <owl:Class rdf:about="#Observation">
         <rdfs:subClassOf rdf:resource="#ScienceProcess"/>
@@ -1243,7 +1243,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ObservationAgency -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ObservationAgency -->
 
     <owl:Class rdf:about="#ObservationAgency">
         <rdfs:subClassOf rdf:resource="#ScienceInfrastructureAgency"/>
@@ -1253,7 +1253,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ObservationProgram -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ObservationProgram -->
 
     <owl:Class rdf:about="#ObservationProgram">
         <rdfs:subClassOf rdf:resource="#Program"/>
@@ -1263,7 +1263,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ObservationProposal -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ObservationProposal -->
 
     <owl:Class rdf:about="#ObservationProposal">
         <rdfs:subClassOf rdf:resource="#TimeProposal"/>
@@ -1273,7 +1273,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Observatory -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Observatory -->
 
     <owl:Class rdf:about="#Observatory">
         <rdfs:subClassOf rdf:resource="#ScienceInfrastructure"/>
@@ -1283,7 +1283,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#OrganizationList -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#OrganizationList -->
 
     <owl:Class rdf:about="#OrganizationList">
         <rdfs:subClassOf rdf:resource="&collections;List"/>
@@ -1297,7 +1297,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#OrganizationListItem -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#OrganizationListItem -->
 
     <owl:Class rdf:about="#OrganizationListItem">
         <rdfs:subClassOf rdf:resource="&collections;ListItem"/>
@@ -1323,13 +1323,13 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#OrganizationName -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#OrganizationName -->
 
     <owl:Class rdf:about="#OrganizationName"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ProductProposal -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ProductProposal -->
 
     <owl:Class rdf:about="#ProductProposal">
         <rdfs:subClassOf rdf:resource="#Proposal"/>
@@ -1337,7 +1337,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Program -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Program -->
 
     <owl:Class rdf:about="#Program">
         <rdfs:subClassOf>
@@ -1352,7 +1352,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Project -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Project -->
 
     <owl:Class rdf:about="#Project">
         <rdfs:subClassOf rdf:resource="&foaf;Project"/>
@@ -1360,7 +1360,7 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Proposal -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Proposal -->
 
     <owl:Class rdf:about="#Proposal">
         <rdfs:subClassOf>
@@ -1377,7 +1377,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ProposalList -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ProposalList -->
 
     <owl:Class rdf:about="#ProposalList">
         <rdfs:subClassOf rdf:resource="&collections;List"/>
@@ -1391,7 +1391,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ProposalListItem -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ProposalListItem -->
 
     <owl:Class rdf:about="#ProposalListItem">
         <rdfs:subClassOf rdf:resource="&collections;ListItem"/>
@@ -1417,13 +1417,13 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ProposalSet -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ProposalSet -->
 
     <owl:Class rdf:about="#ProposalSet"/>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ReifiedOAka -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ReifiedOAka -->
 
     <owl:Class rdf:about="#ReifiedOAka">
         <rdfs:subClassOf rdf:resource="&reification;BinaryRelationship"/>
@@ -1443,7 +1443,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ScienceInfrastructure -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ScienceInfrastructure -->
 
     <owl:Class rdf:about="#ScienceInfrastructure">
         <rdfs:comment
@@ -1452,7 +1452,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ScienceInfrastructureAgency -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ScienceInfrastructureAgency -->
 
     <owl:Class rdf:about="#ScienceInfrastructureAgency">
         <rdfs:subClassOf rdf:resource="&foaf;Organization"/>
@@ -1462,7 +1462,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ScienceProcess -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ScienceProcess -->
 
     <owl:Class rdf:about="#ScienceProcess">
         <rdfs:subClassOf rdf:resource="&owl;Thing"/>
@@ -1472,7 +1472,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#ScienceProduct -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#ScienceProduct -->
 
     <owl:Class rdf:about="#ScienceProduct">
         <rdfs:subClassOf rdf:resource="&owl;Thing"/>
@@ -1482,7 +1482,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Simulation -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Simulation -->
 
     <owl:Class rdf:about="#Simulation">
         <rdfs:subClassOf rdf:resource="#ScienceProcess"/>
@@ -1490,7 +1490,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#SoftwareProduct -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#SoftwareProduct -->
 
     <owl:Class rdf:about="#SoftwareProduct">
         <rdfs:subClassOf rdf:resource="#ScienceProduct"/>
@@ -1498,7 +1498,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#SpaceCraft -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#SpaceCraft -->
 
     <owl:Class rdf:about="#SpaceCraft">
         <rdfs:subClassOf rdf:resource="#Observatory"/>
@@ -1506,7 +1506,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Survey -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Survey -->
 
     <owl:Class rdf:about="#Survey">
         <rdfs:subClassOf rdf:resource="#Project"/>
@@ -1516,7 +1516,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Theory -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#Theory -->
 
     <owl:Class rdf:about="#Theory">
         <rdfs:subClassOf rdf:resource="#ScienceProcess"/>
@@ -1524,7 +1524,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#TimeProposal -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#TimeProposal -->
 
     <owl:Class rdf:about="#TimeProposal">
         <rdfs:subClassOf rdf:resource="#Proposal"/>
@@ -1532,7 +1532,7 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#WrittenProduct -->
+    <!-- https://github.com/rahuldave/ontoads/raw/master/owl/ADS-Base.owl#WrittenProduct -->
 
     <owl:Class rdf:about="#WrittenProduct">
         <rdfs:subClassOf rdf:resource="#ScienceProduct"/>

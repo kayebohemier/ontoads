@@ -11,16 +11,16 @@
     <!ENTITY dc   "http://purl.org/dc/elements/1.1/" >
     <!ENTITY skos "http://www.w3.org/2008/05/skos#" >
     
-    <!ENTITY reification "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/">
+    <!ENTITY reification "http://swan.mindinformatics.org/ontologies/1.2/reification/">
     
     <!-- Main namespace -->
-    <!ENTITY qualifiers "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/qualifiers/" >
+    <!ENTITY qualifiers "http://swan.mindinformatics.org/ontologies/1.2/qualifiers/" >
     
     <!-- Main files -->
     <!-- Local file to be removed before release -->
     <!ENTITY local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/qualifiers.owl">  
     
-    <!ENTITY path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/qualifiers.owl">
+    <!ENTITY path "http://swan.mindinformatics.org/ontologies/1.2/qualifiers.owl">
   	<!ENTITY file "&path;">
   	
 	<!-- Imported files -->  	
@@ -28,8 +28,8 @@
   	<!ENTITY skos-local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/skos-essential.owl">
   	<!ENTITY reification-local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/reification.owl">
 
-  	<!ENTITY skos-path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/skos-essential.owl">
-  	<!ENTITY reification-path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification.owl">
+  	<!ENTITY skos-path "http://swan.mindinformatics.org/ontologies/1.2/skos-essential.owl">
+  	<!ENTITY reification-path "http://swan.mindinformatics.org/ontologies/1.2/reification.owl">
   	
   	<!ENTITY skos-file "&skos-path;">
   	<!ENTITY reification-file "&reification-path;">
@@ -101,8 +101,7 @@
         	<owl:Class>
 		    	<owl:complementOf>
 		    		<owl:Class>
-						<owl:unionOf rdf:parseType="Collection">
-				    		<owl:Class rdf:about="Qualifier"/> 
+						<owl:unionOf rdf:parseType="Collection">				    		<owl:Class rdf:about="Qualifier"/> 
 				    		<owl:Class rdf:about="&skos;Concept"/> 
 				    		<owl:Class rdf:about="&skos;Collection"/> 
 				    		<owl:Class rdf:about="&skos;ConceptScheme"/>   	
@@ -187,6 +186,5 @@
 	            <owl:allValuesFrom rdf:resource="qualifiedBy"/>
 	        </owl:Restriction>
         </rdfs:subClassOf>
-        -->
-	</owl:Class>
+        -->	</owl:Class>
 </rdf:RDF>

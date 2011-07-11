@@ -11,12 +11,12 @@
     <!ENTITY dc   "http://purl.org/dc/elements/1.1/" >
     
     <!-- Main namespace -->
-    <!ENTITY reification "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/" >
+    <!ENTITY reification "http://swan.mindinformatics.org/ontologies/1.2/reification/" >
     
     <!-- Files -->
   	<!ENTITY local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/reification.owl">
   	
-  	<!ENTITY path "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification.owl">
+  	<!ENTITY path "http://swan.mindinformatics.org/ontologies/1.2/reification.owl">
   	<!ENTITY file "&path;">
 ]>
 
@@ -84,20 +84,20 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/object -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/reification/object -->
 
     <owl:ObjectProperty rdf:about="object">
         <rdfs:domain rdf:resource="BinaryRelationship"/>
     </owl:ObjectProperty>
     
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/property -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/reification/property -->
 	<!--
     <owl:ObjectProperty rdf:about="property">
         <rdfs:domain rdf:resource="Relationship"/>
         <rdfs:range rdf:resource="&owl;ObjectProperty"/>
     </owl:ObjectProperty>
     -->
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/subject -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/reification/subject -->
 
     <owl:ObjectProperty rdf:about="subject">
         <rdfs:domain rdf:resource="BinaryRelationship"/>
@@ -112,7 +112,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/BinaryRelationship -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/reification/BinaryRelationship -->
     <owl:Class rdf:about="BinaryRelationship" rdfs:label="(reification) BinaryRelationship">
         <rdfs:subClassOf rdf:resource="Relationship"/>
         <rdfs:subClassOf>
@@ -133,7 +133,7 @@
     	</rdfs:subClassOf> 
     </owl:Class>
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/Relationship -->
+    <!-- http://swan.mindinformatics.org/ontologies/1.2/reification/Relationship -->
     <owl:Class rdf:about="Relationship" rdfs:label="(reification) Relationship">
     	<!--
         <owl:disjointWith rdf:resource="&owl;ObjectProperty"/>
