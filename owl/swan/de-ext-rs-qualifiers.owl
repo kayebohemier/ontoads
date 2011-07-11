@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+
+<!-- Created by Paolo Ciccarese http://www.hcklab.org/people/pc/ on November 30th, 2008 -->
+
+<!DOCTYPE rdf:RDF [
+    <!-- Other namespaces -->
+    <!ENTITY xsd  "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdf  "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY owl  "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc   "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY skos "http://www.w3.org/2008/05/skos#" >
+    <!ENTITY qualifiers "http://swan.mindinformatics.org/ontologies/1.2/qualifiers/">
+ 
+    <!-- Main namespace -->
+    <!ENTITY rsqualifiers "http://swan.mindinformatics.org/ontologies/1.2/rsqualifiers/">
+    
+    <!-- Files -->
+  	<!ENTITY local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/de-ext-rs-qualifiers.owl">
+  	<!ENTITY path "http://swan.mindinformatics.org/ontologies/1.2/de-ext-rs-qualifiers.owl">
+  	<!ENTITY file "&path;"> 
+  	
+  	<!-- Imported files -->
+  	<!ENTITY foaf-local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/foaf-essential.owl">
+    <!ENTITY qualifiers-local "file:///Users/paolociccarese/Workspaces/SWANIII/swan/src/main/webapp/swanwebsite/ontologies/1.2/qualifiers.owl">
+    
+    <!ENTITY foaf-path "http://swan.mindinformatics.org/ontologies/1.2/foaf-essential.owl">
+    <!ENTITY qualifiers-path "http://swan.mindinformatics.org/ontologies/1.2/qualifiers.owl">
+    
+    <!ENTITY foaf-file "&foaf-path;">
+  	<!ENTITY qualifiers-file "&qualifiers-path;">   	
+]>
+
+<rdf:RDF
+	xml:base="&rsqualifiers;"
+	xmlns:qualifiers="&qualifiers;"
+	xmlns:rsqualifiers="&rsqualifiers;"
+    xmlns:rdfs="&rdfs;"
+    xmlns:owl="&owl;"
+    xmlns:rdf="&rdf;"
+    xmlns:xsd="&xsd;"
+    xmlns:dc="&dc;"
+    xmlns:foaf="&foaf;"
+    xmlns:skos="&skos;">
+    
+    <owl:Ontology rdf:about="&file;">
+    	<rdf:type rdf:resource="&owl;Ontology"/>
+		<rdfs:label rdf:datatype="&xsd;string">Discourse Elements Qualifier Extension v. 1.2</rdfs:label>
+    	
+    	<owl:imports rdf:resource="&foaf-file;"/>
+    	<owl:imports rdf:resource="&qualifiers-file;"/>
+    
+    	<dc:language>en</dc:language>
+    	<dc:title xml:lang="en">Research Statements Qualifier Extension</dc:title>
+    	<dc:creator rdf:resource="http://www.hcklab.org/people/paolo-ciccarese/" />
+    	<dc:contributor rdf:datatype="&xsd;string">Paolo Ciccarese</dc:contributor>   	
+    	<dc:publisher rdf:datatype="&xsd;string">http://swan.mindinformatics.org</dc:publisher>
+        <dc:date rdf:datatype="&xsd;string">January 14, 2009</dc:date>
+        <dc:format rdf:datatype="&xsd;string">rdf/xml</dc:format>    
+    </owl:Ontology> 
+
+  	<!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+     
+  	<rdf:Description rdf:about="&dc;title">
+  	  	<rdf:type rdf:resource="&owl;AnnotationProperty"/>
+  	</rdf:Description>
+  	<rdf:Description rdf:about="&dc;date">
+    	<rdf:type rdf:resource="&owl;AnnotationProperty"/>
+ 	</rdf:Description>
+  	<rdf:Description rdf:about="&dc;creator">
+    	<rdf:type rdf:resource="&owl;AnnotationProperty"/>
+  	</rdf:Description>
+  	<rdf:Description rdf:about="&dc;format">
+    	<rdf:type rdf:resource="&owl;AnnotationProperty"/>
+  	</rdf:Description>
+  	<rdf:Description rdf:about="&dc;language">
+    	<rdf:type rdf:resource="&owl;AnnotationProperty"/>
+  	</rdf:Description>
+  	<rdf:Description rdf:about="&dc;publisher">
+    	<rdf:type rdf:resource="&owl;AnnotationProperty"/>
+  	</rdf:Description>
+  	<rdf:Description rdf:about="&dc;contributor">
+    	<rdf:type rdf:resource="&owl;AnnotationProperty"/>
+  	</rdf:Description>  	   
+    
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->     
+    <owl:Class rdf:about="ResearchStatementQualifierConcept">
+    	<rdfs:subClassOf rdf:resource="&qualifiers;QualifierConcept"/>
+  	</owl:Class>  
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->         
+    <skos:Collection rdf:about="&rsqualifiers;research_statement_qualifiers">
+		<rdfs:label>Research Statement Qualifiers</rdfs:label>
+		<dc:creator>
+			<foaf:Person rdf:about="http://www.hcklab.org/people/pc/">
+				<rdfs:label>Paolo Ciccarese</rdfs:label>
+				<foaf:name>Paolo Ciccarese</foaf:name>
+			</foaf:Person>
+		</dc:creator>
+		<skos:member rdf:resource="&rsqualifiers;hypothesis"/>
+		<skos:member rdf:resource="&rsqualifiers;claim"/>
+	</skos:Collection> 
+	
+	<rsqualifiers:ResearchStatementQualifierConcept rdf:about="&rsqualifiers;hypothesis">
+		<!--<qualifiers:hasMeaning rdf:resource="Hypothesis"/>-->
+	    <skos:prefLabel>Hypothesis</skos:prefLabel>
+  	</rsqualifiers:ResearchStatementQualifierConcept>   
+
+	<rsqualifiers:ResearchStatementQualifierConcept rdf:about="&rsqualifiers;claim">
+		<!--<qualifiers:hasMeaning rdf:resource="Claim"/>-->
+	    <skos:prefLabel>Claim</skos:prefLabel>
+  	</rsqualifiers:ResearchStatementQualifierConcept>  
+</rdf:RDF>
