@@ -11,8 +11,8 @@
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY pav "https://raw.github.com/kayebohemier/ontoads/master/owl/pav/" >
     <!ENTITY agents "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/" >
-    <!ENTITY ADS-obsv "https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-obsv.owl#" >
     <!ENTITY ADS-Base "https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#" >
+    <!ENTITY ADS-obsv "https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-obsv.owl#" >
 ]>
 
 
@@ -44,12 +44,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/pav/createdBy -->
-
-    <owl:ObjectProperty rdf:about="&pav;createdBy"/>
     
 
 
@@ -101,8 +95,8 @@
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdfs:comment
             >I think this should be expanded out so I can also use this to describe different Document-level things.</rdfs:comment>
-        <rdfs:domain rdf:resource="&foaf;Document"/>
         <rdfs:range rdf:resource="&foaf;Document"/>
+        <rdfs:domain rdf:resource="&foaf;Document"/>
         <rdfs:domain rdf:resource="&ADS-Base;ScienceInfrastructure"/>
         <rdfs:range rdf:resource="&ADS-Base;ScienceInfrastructure"/>
     </owl:ObjectProperty>
@@ -312,10 +306,10 @@
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&agents;Person"/>
-                    <rdf:Description rdf:about="&agents;PersonName"/>
                     <rdf:Description rdf:about="&ADS-Base;Collaboration"/>
                     <rdf:Description rdf:about="&ADS-Base;Project"/>
+                    <rdf:Description rdf:about="&agents;Person"/>
+                    <rdf:Description rdf:about="&agents;PersonName"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -373,6 +367,12 @@
         <rdfs:subPropertyOf rdf:resource="&ADS-Base;usingScienceInfrastructure"/>
         <rdfs:range rdf:resource="#Telescope"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/pav/createdBy -->
+
+    <owl:ObjectProperty rdf:about="&pav;createdBy"/>
     
 
 
@@ -888,18 +888,6 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/Person -->
-
-    <owl:Class rdf:about="&agents;Person"/>
-    
-
-
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/PersonName -->
-
-    <owl:Class rdf:about="&agents;PersonName"/>
-    
-
-
     <!-- http://www.w3.org/2002/07/owl#Thing -->
 
     <owl:Class rdf:about="&owl;Thing"/>
@@ -1026,38 +1014,20 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
     <owl:Class rdf:about="&ADS-Base;Instrument">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasFOV"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;decimal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#supports"/>
-                <owl:someValuesFrom rdf:resource="#Measurement"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#wavelengthEnd"/>
-                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#wavelengthStart"/>
-                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+                <owl:onProperty rdf:resource="&foaf;isPrimaryTopicOf"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="#InstrumentResource"/>
+                            <rdf:Description rdf:about="#ProvenanceDocument"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#firstLight"/>
-                <owl:someValuesFrom rdf:resource="&xsd;date"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#lastLight"/>
                 <owl:someValuesFrom rdf:resource="&xsd;date"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1077,15 +1047,33 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&foaf;isPrimaryTopicOf"/>
-                <owl:someValuesFrom>
-                    <owl:Class>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="#InstrumentResource"/>
-                            <rdf:Description rdf:about="#ProvenanceDocument"/>
-                        </owl:unionOf>
-                    </owl:Class>
-                </owl:someValuesFrom>
+                <owl:onProperty rdf:resource="#wavelengthEnd"/>
+                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#supports"/>
+                <owl:someValuesFrom rdf:resource="#Measurement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasFOV"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#wavelengthStart"/>
+                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#lastLight"/>
+                <owl:someValuesFrom rdf:resource="&xsd;date"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1109,20 +1097,6 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
     <owl:Class rdf:about="&ADS-Base;Observatory">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#contains"/>
-                <owl:onClass>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&ADS-Base;Instrument"/>
-                            <rdf:Description rdf:about="#Telescope"/>
-                        </owl:intersectionOf>
-                    </owl:Class>
-                </owl:onClass>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="&foaf;isPrimaryTopicOf"/>
                 <owl:someValuesFrom>
                     <owl:Class>
@@ -1138,6 +1112,20 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&foaf;fundedBy"/>
                 <owl:someValuesFrom rdf:resource="&ADS-Base;FundingAgency"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#contains"/>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&ADS-Base;Instrument"/>
+                            <rdf:Description rdf:about="#Telescope"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:onClass>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1375,6 +1363,8 @@ Telescope must have some instrument; if it does have an instrument, the instrume
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment
+            >Will map to ivoa-objectontology.owl Measurements section.</rdfs:comment>
+        <rdfs:comment
             >Instrument subClassOf supports some Measurement
 Measurement subClassOf isSupportedBy some Instrument
 
@@ -1386,8 +1376,6 @@ Measurement subClassOf isSupportedBy some Instrument
 :Spectrum :a :Measurement &#171; defined in ivoa-objectontology.owl &#187;
 :Spectrum :isSupportedBy :ACIS
 :Spectrum :isSupportedBy :Chandra</rdfs:comment>
-        <rdfs:comment
-            >Will map to ivoa-objectontology.owl Measurements section.</rdfs:comment>
     </owl:Class>
     
 
@@ -1527,7 +1515,7 @@ FuseArchivalInstrumentHandbook :a :InstrumentResource
     <owl:Class rdf:about="#ScienceInfrastructureComponent">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#belongsTo"/>
+                <owl:onProperty rdf:resource="#isContainedIn"/>
                 <owl:onClass>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
@@ -1596,15 +1584,15 @@ I&#39;m not positive that &quot;ScienceInfrastructureConfiguration&quot; should 
         <rdfs:subClassOf rdf:resource="&ADS-Base;ScienceInfrastructure"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&foaf;isPrimaryTopicOf"/>
-                <owl:someValuesFrom rdf:resource="#ProvenanceDocument"/>
+                <owl:onProperty rdf:resource="&ADS-Base;atObservatory"/>
+                <owl:onClass rdf:resource="&ADS-Base;Observatory"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ADS-Base;atObservatory"/>
-                <owl:onClass rdf:resource="&ADS-Base;Observatory"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="&foaf;isPrimaryTopicOf"/>
+                <owl:someValuesFrom rdf:resource="#ProvenanceDocument"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1655,6 +1643,18 @@ Generalizing ScienceInfrastructureComponent b/c sometimes the instrument sets ar
     
 
 
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/Person -->
+
+    <owl:Class rdf:about="&agents;Person"/>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/PersonName -->
+
+    <owl:Class rdf:about="&agents;PersonName"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1670,6 +1670,9 @@ Generalizing ScienceInfrastructureComponent b/c sometimes the instrument sets ar
 
     <owl:Thing rdf:about="#EMDOMAIN">
         <rdf:type rdf:resource="&skos2;Concept"/>
+        <skos2:altLabel
+            >Coverage.Spectral</skos2:altLabel>
+        <skos2:altLabel>EMDOMAIN</skos2:altLabel>
         <skos2:definition xml:lang="en"
             >A named spectral region of the electro-magnetic spectrum that the resource&#39;s spectral coverage overlaps with. A resource may contain
 multiple entries. This provides a general sense of what part of the spectrum the data covers; more specific predicates, such as
@@ -1678,9 +1681,6 @@ wavelengthStart and wavelengthEnd can also be used.
 This corresponds to the waveband entry in version 1.1 of the
 VODataService IVOA recommendation or the RM name
 Coverage.Spectral.</skos2:definition>
-        <skos2:altLabel
-            >Coverage.Spectral</skos2:altLabel>
-        <skos2:altLabel>EMDOMAIN</skos2:altLabel>
         <skos2:prefLabel xml:lang="en"
             >Electromagnetic Domain</skos2:prefLabel>
         <rdfs:comment xml:lang="en"
@@ -1702,17 +1702,17 @@ DJB 2011-03-07</rdfs:comment>
 
     <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-obsv.owl#EMDOMAIN_EUV -->
 
-    <owl:Thing rdf:about="#EMDOMAIN_EUV">
-        <rdf:type rdf:resource="&skos2;Concept"/>
-        <skos2:altLabel>EXTREME-UV</skos2:altLabel>
+    <skos2:Concept rdf:about="#EMDOMAIN_EUV">
+        <rdf:type rdf:resource="&owl;Thing"/>
         <skos2:definition xml:lang="en"
             >100 Angstroms &lt;= wavelength &lt;= 1000 Angstroms; 
 12 eV &lt;= energy &lt;= 120 eV</skos2:definition>
+        <skos2:altLabel>EXTREME-UV</skos2:altLabel>
         <skos2:altLabel>EUV</skos2:altLabel>
         <skos2:prefLabel xml:lang="en"
             >Extreme Ultraviolet</skos2:prefLabel>
         <skos2:broader rdf:resource="#EMDOMAIN"/>
-    </owl:Thing>
+    </skos2:Concept>
     
 
 
@@ -1732,14 +1732,14 @@ DJB 2011-03-07</rdfs:comment>
 
     <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-obsv.owl#EMDOMAIN_INFRARED -->
 
-    <skos2:Concept rdf:about="#EMDOMAIN_INFRARED">
-        <rdf:type rdf:resource="&owl;Thing"/>
+    <owl:Thing rdf:about="#EMDOMAIN_INFRARED">
+        <rdf:type rdf:resource="&skos2;Concept"/>
+        <skos2:altLabel>INFRARED</skos2:altLabel>
         <skos2:definition xml:lang="en"
             >1 micron &lt;= wavelength &lt;= 100 microns</skos2:definition>
-        <skos2:altLabel>INFRARED</skos2:altLabel>
         <skos2:prefLabel xml:lang="en">Infra-red</skos2:prefLabel>
         <skos2:broader rdf:resource="#EMDOMAIN"/>
-    </skos2:Concept>
+    </owl:Thing>
     
 
 
@@ -1747,10 +1747,10 @@ DJB 2011-03-07</rdfs:comment>
 
     <skos2:Concept rdf:about="#EMDOMAIN_MILLIMETER">
         <rdf:type rdf:resource="&owl;Thing"/>
+        <skos2:altLabel>MILLIMETER</skos2:altLabel>
         <skos2:definition xml:lang="en"
             >0.1 mm &lt;= wavelength &lt;= 10 mm; 
 3000 GHz &gt;= frequency &gt;= 30 GHz.</skos2:definition>
-        <skos2:altLabel>MILLIMETER</skos2:altLabel>
         <skos2:prefLabel xml:lang="en">Millimeter</skos2:prefLabel>
         <skos2:broader rdf:resource="#EMDOMAIN"/>
     </skos2:Concept>
@@ -1759,8 +1759,8 @@ DJB 2011-03-07</rdfs:comment>
 
     <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-obsv.owl#EMDOMAIN_OPTICAL -->
 
-    <skos2:Concept rdf:about="#EMDOMAIN_OPTICAL">
-        <rdf:type rdf:resource="&owl;Thing"/>
+    <owl:Thing rdf:about="#EMDOMAIN_OPTICAL">
+        <rdf:type rdf:resource="&skos2;Concept"/>
         <skos2:altLabel>OPTICAL</skos2:altLabel>
         <skos2:definition xml:lang="en"
             >0.3 microns &lt;= wavelength &lt;= 1 micron; 
@@ -1768,7 +1768,7 @@ DJB 2011-03-07</rdfs:comment>
 3000 Angstroms &lt;= wavelength &lt;= 10000 Angstroms</skos2:definition>
         <skos2:prefLabel xml:lang="en">Optical</skos2:prefLabel>
         <skos2:broader rdf:resource="#EMDOMAIN"/>
-    </skos2:Concept>
+    </owl:Thing>
     
 
 
@@ -1802,16 +1802,16 @@ DJB 2011-03-07</rdfs:comment>
 
     <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-obsv.owl#EMDOMAIN_X-RAY -->
 
-    <owl:Thing rdf:about="#EMDOMAIN_X-RAY">
-        <rdf:type rdf:resource="&skos2;Concept"/>
-        <skos2:altLabel>X-RAY</skos2:altLabel>
+    <skos2:Concept rdf:about="#EMDOMAIN_X-RAY">
+        <rdf:type rdf:resource="&owl;Thing"/>
         <skos2:hiddenLabel>XRAY</skos2:hiddenLabel>
         <skos2:definition xml:lang="en"
             >0.1 Angstroms &lt;= wavelength &lt;= 100 Angstroms; 
 0.12 keV &lt;= energy &lt;= 120 keV</skos2:definition>
+        <skos2:altLabel>X-RAY</skos2:altLabel>
         <skos2:prefLabel xml:lang="en">X-ray</skos2:prefLabel>
         <skos2:broader rdf:resource="#EMDOMAIN"/>
-    </owl:Thing>
+    </skos2:Concept>
     
 
 
