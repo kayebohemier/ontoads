@@ -11,9 +11,9 @@
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY pav "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/pav/" >
     <!ENTITY agents "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/" >
-    <!ENTITY reification "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/" >
-    <!ENTITY collections "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/" >
     <!ENTITY ADS-Base "https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#" >
+    <!ENTITY collections "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/" >
+    <!ENTITY reification "https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/" >
 ]>
 
 
@@ -59,42 +59,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/item -->
-
-    <owl:ObjectProperty rdf:about="&collections;item"/>
-    
-
-
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/itemContent -->
-
-    <owl:ObjectProperty rdf:about="&collections;itemContent"/>
-    
-
-
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/nextItem -->
-
-    <owl:ObjectProperty rdf:about="&collections;nextItem"/>
-    
-
-
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/previousItem -->
-
-    <owl:ObjectProperty rdf:about="&collections;previousItem"/>
-    
-
-
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/object -->
-
-    <owl:ObjectProperty rdf:about="&reification;object"/>
-    
-
-
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/subject -->
-
-    <owl:ObjectProperty rdf:about="&reification;subject"/>
     
 
 
@@ -227,8 +191,8 @@
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&agents;PersonName"/>
                     <rdf:Description rdf:about="&foaf;Agent"/>
+                    <rdf:Description rdf:about="&agents;PersonName"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -252,10 +216,10 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&agents;Person"/>
-                    <rdf:Description rdf:about="&agents;PersonName"/>
                     <rdf:Description rdf:about="&foaf;Group"/>
                     <rdf:Description rdf:about="#Collaboration"/>
+                    <rdf:Description rdf:about="&agents;Person"/>
+                    <rdf:Description rdf:about="&agents;PersonName"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -293,9 +257,9 @@
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&foaf;Group"/>
                     <rdf:Description rdf:about="&agents;Person"/>
                     <rdf:Description rdf:about="&agents;PersonName"/>
-                    <rdf:Description rdf:about="&foaf;Group"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -313,9 +277,9 @@
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&foaf;Group"/>
                     <rdf:Description rdf:about="&agents;Person"/>
                     <rdf:Description rdf:about="&agents;PersonName"/>
-                    <rdf:Description rdf:about="&foaf;Group"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -379,8 +343,8 @@
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&agents;PersonName"/>
                     <rdf:Description rdf:about="&foaf;Agent"/>
+                    <rdf:Description rdf:about="&agents;PersonName"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -403,14 +367,6 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:comment
             >Typically an observatory is operated by an observation agency. But if its small enough a collaboration might be running it. TODO: What if a collaboration is only running some telescopes/instruments in it?</rdfs:comment>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&foaf;Project"/>
-                    <rdf:Description rdf:about="#ScienceInfrastructure"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -419,6 +375,14 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&foaf;Project"/>
+                    <rdf:Description rdf:about="#ScienceInfrastructure"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -447,8 +411,8 @@
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&agents;PersonName"/>
                     <rdf:Description rdf:about="&foaf;Person"/>
+                    <rdf:Description rdf:about="&agents;PersonName"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -597,6 +561,42 @@
     <owl:ObjectProperty rdf:about="#usingScienceInfrastructure">
         <rdfs:range rdf:resource="#ScienceInfrastructure"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/item -->
+
+    <owl:ObjectProperty rdf:about="&collections;item"/>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/itemContent -->
+
+    <owl:ObjectProperty rdf:about="&collections;itemContent"/>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/nextItem -->
+
+    <owl:ObjectProperty rdf:about="&collections;nextItem"/>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/previousItem -->
+
+    <owl:ObjectProperty rdf:about="&collections;previousItem"/>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/object -->
+
+    <owl:ObjectProperty rdf:about="&reification;object"/>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/subject -->
+
+    <owl:ObjectProperty rdf:about="&reification;subject"/>
     
 
 
@@ -849,36 +849,6 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/Person -->
-
-    <owl:Class rdf:about="&agents;Person"/>
-    
-
-
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/PersonName -->
-
-    <owl:Class rdf:about="&agents;PersonName"/>
-    
-
-
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/List -->
-
-    <owl:Class rdf:about="&collections;List"/>
-    
-
-
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/ListItem -->
-
-    <owl:Class rdf:about="&collections;ListItem"/>
-    
-
-
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/BinaryRelationship -->
-
-    <owl:Class rdf:about="&reification;BinaryRelationship"/>
-    
-
-
     <!-- http://www.w3.org/2002/07/owl#Thing -->
 
     <owl:Class rdf:about="&owl;Thing"/>
@@ -932,13 +902,6 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
     <owl:Class rdf:about="#Affiliation">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#atTime"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;dateTime"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="#affiliationContext"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
@@ -948,6 +911,13 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
                 <owl:onProperty rdf:resource="#organizationName"/>
                 <owl:onClass rdf:resource="#OrganizationName"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#atTime"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment
@@ -1220,9 +1190,9 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
                 <owl:onClass>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&foaf;Group"/>
                             <rdf:Description rdf:about="&agents;Person"/>
                             <rdf:Description rdf:about="&agents;PersonName"/>
-                            <rdf:Description rdf:about="&foaf;Group"/>
                         </owl:unionOf>
                     </owl:Class>
                 </owl:onClass>
@@ -1303,14 +1273,14 @@ This corresponds to the access_url column of ObsCore.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="&collections;ListItem"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&collections;itemContent"/>
-                <owl:allValuesFrom rdf:resource="&foaf;Organization"/>
+                <owl:onProperty rdf:resource="&collections;nextItem"/>
+                <owl:someValuesFrom rdf:resource="#OrganizationListItem"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&collections;nextItem"/>
-                <owl:someValuesFrom rdf:resource="#OrganizationListItem"/>
+                <owl:onProperty rdf:resource="&collections;itemContent"/>
+                <owl:allValuesFrom rdf:resource="&foaf;Organization"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1498,10 +1468,12 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#SpaceCraft -->
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#SpaceBasedObservatory -->
 
-    <owl:Class rdf:about="#SpaceCraft">
+    <owl:Class rdf:about="#SpaceBasedObservatory">
         <rdfs:subClassOf rdf:resource="#Observatory"/>
+        <rdfs:comment
+            >Changed from SpaceCraft to SpaceBasedObservatory because not all observatories are autonomous space craft. For example, HUT is an instrument (telescope) on the ASTRO Observatory, which was mounted on pallet in the payload section of the shuttles it flew on.</rdfs:comment>
     </owl:Class>
     
 
@@ -1537,6 +1509,36 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     <owl:Class rdf:about="#WrittenProduct">
         <rdfs:subClassOf rdf:resource="#ScienceProduct"/>
     </owl:Class>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/Person -->
+
+    <owl:Class rdf:about="&agents;Person"/>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/agents/PersonName -->
+
+    <owl:Class rdf:about="&agents;PersonName"/>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/List -->
+
+    <owl:Class rdf:about="&collections;List"/>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/collections/ListItem -->
+
+    <owl:Class rdf:about="&collections;ListItem"/>
+    
+
+
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/swan/reification/BinaryRelationship -->
+
+    <owl:Class rdf:about="&reification;BinaryRelationship"/>
 </rdf:RDF>
 
 

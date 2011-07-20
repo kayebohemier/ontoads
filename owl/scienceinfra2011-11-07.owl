@@ -1027,18 +1027,12 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#firstLight"/>
-                <owl:someValuesFrom rdf:resource="&xsd;date"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="#isContainedIn"/>
                 <owl:onClass>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="&ADS-Base;Laboratory"/>
-                            <rdf:Description rdf:about="#Telescope"/>
+                            <rdf:Description rdf:about="&ADS-Base;Observatory"/>
                         </owl:unionOf>
                     </owl:Class>
                 </owl:onClass>
@@ -1066,14 +1060,20 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#wavelengthStart"/>
-                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
+                <owl:onProperty rdf:resource="#firstLight"/>
+                <owl:someValuesFrom rdf:resource="&xsd;date"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#lastLight"/>
                 <owl:someValuesFrom rdf:resource="&xsd;date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#wavelengthStart"/>
+                <owl:someValuesFrom rdf:resource="&xsd;nonNegativeInteger"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1110,12 +1110,6 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&foaf;fundedBy"/>
-                <owl:someValuesFrom rdf:resource="&ADS-Base;FundingAgency"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="#contains"/>
                 <owl:onClass>
                     <owl:Class>
@@ -1126,6 +1120,12 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
                     </owl:Class>
                 </owl:onClass>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&foaf;fundedBy"/>
+                <owl:someValuesFrom rdf:resource="&ADS-Base;FundingAgency"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1166,9 +1166,9 @@ Telescope must have some instrument; if it does have an instrument, the instrume
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#SpaceCraft -->
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#SpaceBasedObservatory -->
 
-    <owl:Class rdf:about="&ADS-Base;SpaceCraft"/>
+    <owl:Class rdf:about="&ADS-Base;SpaceBasedObservatory"/>
     
 
 
@@ -1581,7 +1581,7 @@ I&#39;m not positive that &quot;ScienceInfrastructureConfiguration&quot; should 
     <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-obsv.owl#Telescope -->
 
     <owl:Class rdf:about="#Telescope">
-        <rdfs:subClassOf rdf:resource="&ADS-Base;ScienceInfrastructure"/>
+        <rdfs:subClassOf rdf:resource="&ADS-Base;Instrument"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ADS-Base;atObservatory"/>
@@ -1593,12 +1593,6 @@ I&#39;m not positive that &quot;ScienceInfrastructureConfiguration&quot; should 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&foaf;isPrimaryTopicOf"/>
                 <owl:someValuesFrom rdf:resource="#ProvenanceDocument"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#contains"/>
-                <owl:someValuesFrom rdf:resource="&ADS-Base;Instrument"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment
@@ -1826,17 +1820,17 @@ DJB 2011-03-07</rdfs:comment>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ADS-Base;AirBasedObservatory"/>
-            <rdf:Description rdf:about="&ADS-Base;GroundBasedObservatory"/>
-            <rdf:Description rdf:about="&ADS-Base;SpaceCraft"/>
+            <rdf:Description rdf:about="&ADS-Base;ComputingCenter"/>
+            <rdf:Description rdf:about="&ADS-Base;Laboratory"/>
+            <rdf:Description rdf:about="&ADS-Base;Observatory"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ADS-Base;ComputingCenter"/>
-            <rdf:Description rdf:about="&ADS-Base;Laboratory"/>
-            <rdf:Description rdf:about="&ADS-Base;Observatory"/>
+            <rdf:Description rdf:about="&ADS-Base;AirBasedObservatory"/>
+            <rdf:Description rdf:about="&ADS-Base;GroundBasedObservatory"/>
+            <rdf:Description rdf:about="&ADS-Base;SpaceBasedObservatory"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
