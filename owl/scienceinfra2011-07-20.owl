@@ -555,7 +555,7 @@ adsobsv:hasCommissionRange &quot;1995/03/02 - 1995/03/18&quot;,</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="#hasFOV">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
         <rdfs:domain rdf:resource="&ADS-Base;Instrument"/>
         <rdfs:domain rdf:resource="#ScienceInfrastructureComponent"/>
     </owl:DatatypeProperty>
@@ -1061,8 +1061,7 @@ so that it can be used with the EMDOMAIN SKOS concept.</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="#hasFOV"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
