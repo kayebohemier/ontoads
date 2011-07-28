@@ -1239,13 +1239,19 @@ Telescope must have some instrument; if it does have an instrument, the instrume
         <rdfs:subClassOf rdf:resource="&ADS-Base;ScienceInfrastructure"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#firstLight"/>
-                <owl:someValuesFrom rdf:resource="&xsd;date"/>
+                <owl:onProperty rdf:resource="#supports"/>
+                <owl:someValuesFrom rdf:resource="#Measurement"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#lastLight"/>
+                <owl:onProperty rdf:resource="#hasFOV"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#firstLight"/>
                 <owl:someValuesFrom rdf:resource="&xsd;date"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1253,18 +1259,6 @@ Telescope must have some instrument; if it does have an instrument, the instrume
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&foaf;isPrimaryTopicOf"/>
                 <owl:someValuesFrom rdf:resource="#ProvenanceDocument"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#contains"/>
-                <owl:someValuesFrom rdf:resource="#ScienceInfrastructureComponent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="#supports"/>
-                <owl:someValuesFrom rdf:resource="#Measurement"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1283,8 +1277,14 @@ Telescope must have some instrument; if it does have an instrument, the instrume
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasFOV"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="#lastLight"/>
+                <owl:someValuesFrom rdf:resource="&xsd;date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#contains"/>
+                <owl:someValuesFrom rdf:resource="#ScienceInfrastructureComponent"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1385,8 +1385,8 @@ Measurement subClassOf isSupportedBy some Instrument
     <owl:Class rdf:about="#ObservatoryCommission">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="#hasCommissionRangeStart"/>
-                <owl:someValuesFrom rdf:resource="&xsd;date"/>
+                <owl:onProperty rdf:resource="&ADS-Base;name"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1397,8 +1397,14 @@ Measurement subClassOf isSupportedBy some Instrument
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&ADS-Base;name"/>
-                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+                <owl:onProperty rdf:resource="#hasCommissionRangeStart"/>
+                <owl:someValuesFrom rdf:resource="&xsd;date"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="&ADS-Base;Observatory"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment
@@ -1782,18 +1788,18 @@ DJB 2011-03-07</rdfs:comment>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ADS-Base;AirBasedObservatory"/>
-            <rdf:Description rdf:about="&ADS-Base;GroundBasedObservatory"/>
-            <rdf:Description rdf:about="&ADS-Base;SpaceBasedObservatory"/>
+            <rdf:Description rdf:about="&ADS-Base;ComputingCenter"/>
+            <rdf:Description rdf:about="&ADS-Base;Laboratory"/>
+            <rdf:Description rdf:about="&ADS-Base;Observatory"/>
+            <rdf:Description rdf:about="#Instrument"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="&ADS-Base;ComputingCenter"/>
-            <rdf:Description rdf:about="&ADS-Base;Laboratory"/>
-            <rdf:Description rdf:about="&ADS-Base;Observatory"/>
-            <rdf:Description rdf:about="#Instrument"/>
+            <rdf:Description rdf:about="&ADS-Base;AirBasedObservatory"/>
+            <rdf:Description rdf:about="&ADS-Base;GroundBasedObservatory"/>
+            <rdf:Description rdf:about="&ADS-Base;SpaceBasedObservatory"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
