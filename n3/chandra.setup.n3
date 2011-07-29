@@ -1,0 +1,72 @@
+# Survey and Observatory
+# This models what CHANDRA is.
+
+:chandra a adsbase:survey,
+	adsbase:name "Chandra X-Ray Observatory",
+	adsbase:operatedBy ("NASA", "CfA", "Smithsonian"), #is this the right notation?
+	adsase:commonName "Chandra".
+
+# Provenance Documents
+
+:chandraprovenance a adsobsv:OtherResource,
+	adsobsv:primaryTopic :chandraobservatory,
+	adsobsv:hasURI <http://chandra.si.edu>.
+
+:acisprovenance a adsobsv:InstrumentResource,
+	adsobsv:primaryTOpic :acis,
+	adsobsv:hasURI <http://cxc.cfa.harvard.edu/proposer/POG/html/ACIS.html>.
+
+# Commission Range
+
+:chandracommission a adsobsv:CommissionRange,
+	adsobsv:name "Chandra X-Ray Observatory Dates Operational",
+	adsobsv:isPropertyOf :chandraobservatory,
+	adsobsv:hasCommissionRangeStart "1999-07-23".
+
+# Science Infrastructure
+
+:chandraobservatory a adsbase:SpaceCraft,
+	adsbase:name "Chandra X-Ray Observatory",
+	adsbase:operatedBy ("NASA", "CfA", "Smithsonian"),
+	adsbase:commonName "FUSE",
+	adsbase:fundedBy "NASA",
+	adsobsv:isPrimaryTopicOf :chandraprovenance,
+	adsobsv:hasProperty :chandracommission,
+	adsobsv:contains :chandrainstrument.
+
+:hrc a adsbase:Instrument,
+	adsbase:name "High Resolution Camera"
+	adsbase:commonName "HRC"
+	adsobsv:isContainedIn :chandraobservatory,
+	adsobsv:isPrimaryTopicOf :chandraprovenance,
+	adsobsv:supports :Measurement,
+	adsobsv:firstLight "1997-03-19", # Why is this so early?
+	adsobsv:hasFOV "30` x 30`",
+	adsobsv:hasFOV "7` x 97` ". # This may not work b/c it has two of these.
+
+:acis a adsbase:Instrument,
+	adsbase:name "Advanced CCD Imaging Spectrometer"
+	adsbase:commonName "ACIS"
+	adsobsv:isContainedIn :chandraobservatory,
+	adsobsv:isPrimaryTopicOf :chandraprovenance,
+	adsobsv:supports :Measurement,
+	adsobsv:firstLight "1997-02-22", # Again, why so early? Was this Earth-based testing?
+	adsobsv:hasFOV "16.9` x 16.9`",
+	adsobsv:hasFOV "8.3` x 50.6`",
+	adsobsv:isPrimaryTopicOf acisprovenance.
+	#Okay, each of the FOVs here is for a differently-shaped section of CCD
+	#detector suites ... which may belong in science infrastructure components.
+
+
+# Science Infrastructure Components
+
+:hetgs a adsbase:Grating,
+	adsbase:name "High Energy Transmission Grating Spectrometer"
+	adsbase:commonName "HETGS"
+	adsobsv:isContainedIn :chandraobservatory. 
+
+:letgs a adsbase:Grating,
+	adsbase:name "Low Energy Transmission Grating Spectrometer"
+	adsbase:commonName "LETGS"
+	adsobsv:isContainedIn :chandraobservatory. 
+

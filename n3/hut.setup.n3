@@ -1,0 +1,56 @@
+# Survey and Observatory
+# This models what HUT is.
+
+# Provenance Documents
+
+:hutprovenance a adsobsv:InstrumentResource,
+	adsobsv:primaryTopic :hut,
+	adsobsv:hasURI <http://praxis.pha.jhu.edu/papers/docs/h-hbook/h-hbook.html>.
+
+:astroobservatoryprovenance a adsobsv:OtherResource,
+	adsobsv:primaryTopic :astroobservatory,
+	adsobsv:hasURI <http://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=ASTRO-1>,
+	adsobsv:hasURI <http://nssdc.gsfc.nasa.gov/nmc/spacecraftDisplay.do?id=ASTRO-2>.
+
+# Commission Range
+
+:astrocommission1 a adsobsv:CommissionRange,
+	adsobsv:name "ASTRO Observatory 1990 Run",
+	adsobsv:isPropertyOf :astroobservatory,
+	adsobsv:hasCommissionRangeStart "1990-12-02",
+	adsobsv:hasCommissionRangeEnd "1990-12-11".
+
+:astrocommission2 a adsobsv:CommissionRange,
+	adsobsv:name "ASTRO Observatory 1995 Run",
+	adsobsv:isPropertyOf :astroobservatory,
+	adsobsv:hasCommissionRangeStart "1995-03-02",
+	adsobsv:hasCommissionRangeEnd "1995-03-18".
+
+# Science Infrastructure
+
+:astroobservatory a adsbase:SpaceBasedObservatory,
+	adsbase:name "ASTRO Observatory",
+	adsbase:operatedBy ("NASA"),
+	adsbase:commonName "ASTRO",
+	adsbase:fundedBy "NASA",
+	adsobsv:isPrimaryTopicOf :astroobservatoryprovenance,
+	adsobsv:hasProperty :astrocommission1,
+	adsobsv:hasProperty :astrocommission2,
+	adsobsv:contains :hut.
+
+:hut a adsbase:Instrument,
+	adsbase:name "Hopkins Ultraviolet Telescope Project",
+	adsbase:commonName "HUT",
+	adsobsv:isContainedIn :astroobservatory,
+	adsobsv:isPrimaryTopicOf :hutprovenance,
+	adsobsv:supports :Measurement,
+	# No First Lights or Last Lights here b/c these should be understood in the
+	# commission range. Also, they're not really available anywhere.
+	adsobsv:hasFOV "10` (diameter)".
+
+# Science Infrastructure Components
+# HUT doesn't currently have any of these modeled.
+
+
+# I think that instrument and telescope are redundant. A telescope is just simply
+# an instance of instrument.
