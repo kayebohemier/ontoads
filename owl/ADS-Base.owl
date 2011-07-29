@@ -200,10 +200,10 @@
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#fromSurvey -->
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#fromMission -->
 
-    <owl:ObjectProperty rdf:about="#fromSurvey">
-        <rdfs:range rdf:resource="#Survey"/>
+    <owl:ObjectProperty rdf:about="#fromMission">
+        <rdfs:range rdf:resource="#Mission"/>
     </owl:ObjectProperty>
     
 
@@ -1469,9 +1469,9 @@ An accepted proposal is a grant (maybe an overlay for this), funding  proposal o
     
 
 
-    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Survey -->
+    <!-- https://raw.github.com/kayebohemier/ontoads/master/owl/ADS-Base.owl#Mission -->
 
-    <owl:Class rdf:about="#Survey">
+    <owl:Class rdf:about="#Mission">
         <rdfs:subClassOf rdf:resource="#Project"/>
         <rdfs:comment
             >A survey is modelled as a child of Collaboration as it is a structure ment to model the people in it rather than the organization that those people may be in. It would generally make sense to model the organization too, if it is an incorporated organization</rdfs:comment>
