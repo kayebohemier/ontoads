@@ -434,6 +434,14 @@
 
     <owl:DatatypeProperty rdf:about="&foaf;name">
         <owl:propertyDisjointWith rdf:resource="#commonName"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ADS-Base;ScienceInfrastructure"/>
+                    <rdf:Description rdf:about="#ScienceInfrastructureComponent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
