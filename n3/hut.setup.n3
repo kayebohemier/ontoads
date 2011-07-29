@@ -1,6 +1,13 @@
 # Survey and Observatory
 # This models what HUT is.
 
+# Mission information
+
+:hutmission a adsbase:mission,
+	adsbase:name "Hopkins Ultraviolet Telescope Project Mission",
+	adsbase:operatedBy :nasa, #is this the right notation?
+	adsase:commonName "HUT Mission".
+
 # Provenance Documents
 
 :hutprovenance a adsobsv:InstrumentResource,
@@ -30,9 +37,9 @@
 
 :astroobservatory a adsbase:SpaceBasedObservatory,
 	adsbase:name "ASTRO Observatory",
-	adsbase:operatedBy ("NASA"),
+	adsbase:operatedBy :nasa,
 	adsbase:commonName "ASTRO",
-	adsbase:fundedBy "NASA",
+	adsbase:fundedBy :nasa,
 	adsobsv:isPrimaryTopicOf :astroobservatoryprovenance,
 	adsobsv:hasProperty :astrocommission1,
 	adsobsv:hasProperty :astrocommission2,

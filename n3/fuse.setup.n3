@@ -1,9 +1,11 @@
 # Survey and Observatory
 # This models what FUSE is.
 
-:fuse a adsbase:survey,
+:fuse a adsbase:mission,
 	adsbase:name "Far Ultraviolet Spectroscopic Explorer",
-	adsbase:operatedBy ("NASA", "CSA", "CNES"), #is this the right notation?
+	adsbase:operatedBy :nasa,
+	adsbase:operatedBy :csa,
+	adsbase:operatedBy :cnes,
 	adsase:commonName "FUSE".
 
 # Provenance Documents
@@ -21,11 +23,15 @@
 
 # Science Infrastructure
 
-:fuseexplorer a adsbase:SpaceCraft,
+:fuseexplorer a adsbase:SpaceBasedObservatory,
 	adsbase:name "FarUltravioletSpectroscopicExplorer",
-	adsbase:operatedBy ("NASA", "CSA", "CNES"),
+	adsbase:operatedBy :nasa,
+	adsbase:operatedBy :csa,
+	adsbase:operatedBy :cnes,
 	adsbase:commonName "FUSE",
-	adsbase:fundedBy ("NASA", "CSA", "CNES"),
+	adsbase:fundedBy :nasa,
+	adsbase:fundedBy :csa,
+	adsbase:fundedBy :cnes,
 	adsobsv:isPrimaryTopicOf :fuseprovenance,
 	adsobsv:hasProperty :fusecommission,
 	adsobsv:contains :fuseinstrument.
@@ -38,11 +44,12 @@
 	adsobsv:supports :Measurement,
 	adsobsv:firstLight "1999-07-14",
 	adsobsv:lastLight "2007-10-18",
-	adsobsv:hasFOV "19.3′ × 18.3′", # Changed this to a string.
+	adsobsv:hasFOV "19.3′ × 18.3′", # Changed this to a string. May eventually be numeric.
 	adsobsv:contains :hirs,
 	adsobsv:contains :mdrs,
 	adsobsv:contains :lwrs,
 	adsobsv:contains :pinh.
+	
 	# Wavelengths do not seem to be useful here because I am not sure
 	# we want to drill down that far in the descriptions. Perhaps for the meantime
 	# they should just be defined by the observation metadata, at least until

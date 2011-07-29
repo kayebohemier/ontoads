@@ -1,9 +1,11 @@
 # Survey and Observatory
 # This models what CHANDRA is.
 
-:chandra a adsbase:survey,
+:chandra a adsbase:mission,
 	adsbase:name "Chandra X-Ray Observatory",
-	adsbase:operatedBy ("NASA", "CfA", "Smithsonian"), #is this the right notation?
+	adsbase:operatedBy :nasa,
+	adsbase:operatedBy :cfa,
+	adsbase:operatedBy :smithsonianinstitution,
 	adsase:commonName "Chandra".
 
 # Provenance Documents
@@ -27,9 +29,11 @@
 
 :chandraobservatory a adsbase:SpaceCraft,
 	adsbase:name "Chandra X-Ray Observatory",
-	adsbase:operatedBy ("NASA", "CfA", "Smithsonian"),
+	adsbase:operatedBy :nasa,
+	adsbase:operatedBy :cfa,
+	adsbase:operatedBy :smithsonianinstitution,
 	adsbase:commonName "FUSE",
-	adsbase:fundedBy "NASA",
+	adsbase:fundedBy :nasa,
 	adsobsv:isPrimaryTopicOf :chandraprovenance,
 	adsobsv:hasProperty :chandracommission,
 	adsobsv:contains :chandrainstrument.
